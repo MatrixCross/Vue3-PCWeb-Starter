@@ -17,4 +17,13 @@ export default defineConfig({
       '#': path.resolve(__dirname, 'types'),
     },
   },
+
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {},
+        javascriptEnabled: true,
+      },
+    },
+  },
 })
