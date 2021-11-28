@@ -1,7 +1,8 @@
 # Vue 3 Starter
 
 [![Author](https://img.shields.io/badge/Author-Wyatex-green)](https://github.com/Wyatex/)
-[![Issues](https://img.shields.io/github/issues/Wyatex/Vue3-starter)](https://github.com/Wyatex/)
+[![Issues](https://img.shields.io/github/issues/Wyatex/Vue3-starter)](https://github.com/Wyatex/Vue3-starter/issues)
+[![License](https://img.shields.io/badge/License-MIT-yellowgreen)](https://github.com/Wyatex/Vue3-starter/blob/master/LICENSE)
 
 一套集成了 Vite 2.x + Vue 3.x + TypeScript + Vue Router + Pinia + Axios + ESlint 等套件的快速开发模板。
 
@@ -42,6 +43,7 @@ yarn build
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
 - 状态管理：[pinia](https://pinia.esm.dev/)
 - CSS 预处理：[Less](https://less.bootcss.com/)
+- CSS 框架：[Tailwind](https://www.tailwindcss.cn/) + [Postcss](https://www.postcss.com.cn/)
 - HTTP 工具：[Axios](https://axios-http.com/)
 - JSX 处理：[jsx-next](https://github.com/vuejs/jsx-next)
 - 代码规范：[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)
