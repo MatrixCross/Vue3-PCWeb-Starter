@@ -1,16 +1,13 @@
-import type BlockCipherMode from '@types/crypto-js'
 import { encrypt, decrypt } from 'crypto-js/aes'
 import pkcs7 from 'crypto-js/pad-pkcs7'
 import ECB from 'crypto-js/mode-ecb'
 import md5 from 'crypto-js/md5'
 import UTF8, { parse } from 'crypto-js/enc-utf8'
 import Base64 from 'crypto-js/enc-base64'
-import exp from 'constants'
 
 export interface EncryptionParams {
   key: string
   iv?: string
-  mode: BlockCipherMode
 }
 
 // 提供简单的aes-ECB加密，如有其他需求按需进行改造
@@ -21,7 +18,7 @@ export class AesECBEncryption {
   constructor(options: EncryptionParams) {
     this.key = parse(options.key)
     this.options = {
-      mode: options.mode,
+      mode: ECB,
       padding: pkcs7,
     }
   }

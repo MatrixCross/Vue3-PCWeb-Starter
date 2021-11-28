@@ -1,5 +1,8 @@
 module.exports = {
   mode: 'jit',
+  corePlugins: {
+    preflight: false,
+  },
   purge: {
     enable: process.env.NODE_ENV === 'production',
     content: ['./index.html', './src/**/*.{vue,ts,tsx}'],
