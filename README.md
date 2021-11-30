@@ -38,6 +38,7 @@ yarn build
 
 ## 技术栈
 
+- 编程语言：[Typescript](https://www.typescriptlang.org/zh/) + [Javascript](https://www.javascript.com/)
 - 构建工具：[Vite2](https://vitejs.cn/)
 - 前端框架：[Vue3](https://v3.cn.vuejs.org/)
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
