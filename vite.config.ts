@@ -14,7 +14,8 @@ export default defineConfig({
   base: './', // 设置打包路径
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'), // 设置 `@` 指向 `src` 目录
+      '@/': resolve(__dirname, 'src/'),
+      '/#/': resolve(__dirname, 'types/'),
     },
   },
   server: {
