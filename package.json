@@ -22,6 +22,7 @@
     "@types/node": "^16.11.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@vicons/antd": "^0.11.0",
     "@vicons/ionicons5": "^0.11.0",
     "@vitejs/plugin-vue": "^1.10.1",
     "@vue/babel-plugin-jsx": "^1.1.0",

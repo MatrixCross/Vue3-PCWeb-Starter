@@ -15,8 +15,10 @@ Object.keys(modules).forEach(key => {
 routeModuleList.push({
   path: '/',
   name: 'Root',
-  component: () => import('@/App.vue'),
+  redirect: '/home/index',
 })
+
+console.log(routeModuleList)
 
 // 创建路由实例
 const router = createRouter({

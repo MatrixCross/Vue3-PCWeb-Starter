@@ -1697,6 +1697,11 @@
     "@typescript-eslint/types" "5.4.0"
     eslint-visitor-keys "^3.0.0"
 
+"@vicons/antd@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.npmmirror.com/@vicons/antd/download/@vicons/antd-0.11.0.tgz#3d28952d028aed712dca61cb81dbdb11454c5542"
+  integrity sha1-PSiVLQKK7XEtymHLgdvbEUVMVUI=
+
 "@vicons/ionicons5@^0.11.0":
   version "0.11.0"
   resolved "https://registry.npmmirror.com/@vicons/ionicons5/download/@vicons/ionicons5-0.11.0.tgz#54185bfa572a09df70094db1954f28bfbf1363ed"

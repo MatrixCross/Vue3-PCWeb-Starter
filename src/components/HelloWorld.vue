@@ -1,6 +1,6 @@
 <template>
   <h1>{{ msg }}</h1>
-
+  <n-skeleton text :repeat="2" /> <n-skeleton text style="width: 60%" />
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
@@ -36,18 +36,22 @@
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
+import { NSkeleton } from 'naive-ui'
 export default defineComponent({
   name: 'HelloWorld',
+  components: {
+    NSkeleton,
+  },
   props: {
     msg: {
       type: String,
-      required: true
-    }
+      default: 'hello',
+    },
   },
   setup: () => {
     const count = ref(0)
     return { count }
-  }
+  },
 })
 </script>
 
