@@ -15,9 +15,12 @@ import { h } from 'vue'
 import { NMenu, NIcon } from 'naive-ui'
 import { useRouter } from 'vue-router'
 import {
-  BookOutline as BookIcon,
   PersonOutline as PersonIcon,
+  HomeOutline as HomeIcon,
+  InformationCircleOutline as InfoIcon,
 } from '@vicons/ionicons5'
+import BlogIcon from './icons/blogIcon.vue'
+import ProjectIcon from './icons/projectIcon.vue'
 
 defineProps<{
   collapsed: boolean
@@ -32,17 +35,17 @@ const menus = [
   {
     label: '首页',
     key: 'home',
-    icon: renderIcon(BookIcon),
+    icon: renderIcon(HomeIcon),
   },
   {
     label: '关于',
     key: 'about',
-    icon: renderIcon(BookIcon),
+    icon: renderIcon(InfoIcon),
     children: [
       {
         label: '关于项目',
         key: 'about-project',
-        icon: renderIcon(PersonIcon),
+        icon: renderIcon(ProjectIcon),
       },
       {
         label: '关于作者',
@@ -54,7 +57,7 @@ const menus = [
   {
     label: '作者博客',
     key: 'https://wyatex.gitee.io',
-    icon: renderIcon(BookIcon),
+    icon: renderIcon(BlogIcon),
   },
 ]
 
