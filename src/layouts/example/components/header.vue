@@ -50,6 +50,7 @@ defineProps<{
   collapsed: boolean
   inverted: boolean
 }>()
+defineEmits(['update:collapsed'])
 const settingStore = useSettingStore()
 const openGithub = () => {
   window.open('https://github.com/Wyatex/Vue3-starter')
@@ -63,7 +64,7 @@ const handle = e => {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .layout-header {
   display: flex;
   justify-content: space-between;

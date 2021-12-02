@@ -1,7 +1,7 @@
 <template>
   <router-view>
     <template #default="{ Component, route }">
-      <transition :name="getTransitionName" mode="out-in" appear>
+      <transition :name="animationType" mode="out-in" appear>
         <!-- component外面必须要有一层根节点动画才能生效 -->
         <div :key="route.name">
           <component :is="Component" />
@@ -13,7 +13,7 @@
 
 <script setup>
 import { useSettingStore } from '@/store/modules/setting'
-const { getTransitionName } = useSettingStore()
+const { animationType } = useSettingStore()
 </script>
 
 <style lang="less" scoped></style>

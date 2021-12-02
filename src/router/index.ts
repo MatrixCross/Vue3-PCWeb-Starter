@@ -15,10 +15,8 @@ Object.keys(modules).forEach(key => {
 routeModuleList.push({
   path: '/',
   name: 'Root',
-  redirect: '/home/index',
+  redirect: '/home',
 })
-
-console.log(routeModuleList)
 
 // 创建路由实例
 const router = createRouter({

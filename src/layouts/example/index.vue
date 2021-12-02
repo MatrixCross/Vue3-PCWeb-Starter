@@ -21,6 +21,7 @@
         </n-layout-header>
         <n-layout-content
           class="layout-content"
+          content-style="height: 100%;"
           :class="{ 'layout-default-background': inverted === false }"
         >
           <content-view />
@@ -32,7 +33,7 @@
 
 <script lang="ts" setup>
 import { NLayout, NLayoutSider, NLayoutContent, NLayoutHeader } from 'naive-ui'
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useSettingStore } from '@/store/modules/setting'
 import AppProvider from './Application/AppProvider.vue'
 import MenuView from './components/menu.vue'
@@ -43,9 +44,21 @@ const settingStore = useSettingStore()
 
 const collapsed = ref<boolean>(false)
 const inverted = computed(() => settingStore.darkTheme)
+
+const watchWidth = () => {
+  const Width = document.body.clientWidth
+  if (Width <= 950) {
+    collapsed.value = true
+  } else collapsed.value = false
+}
+
+onMounted(() => {
+  window.addEventListener('resize', watchWidth)
+  window['$loading'].finish()
+})
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .layout {
   display: flex;
   flex-direction: row;

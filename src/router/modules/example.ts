@@ -9,9 +9,9 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     children: [
       {
-        path: 'index',
+        path: '',
         name: 'home-index',
-        component: () => import('@/components/HelloWorld.vue'),
+        component: () => import('@/views/example/homePage.vue'),
       },
     ],
   },

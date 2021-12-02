@@ -6,6 +6,7 @@
     :collapsed-width="64"
     :collapsed-icon-size="20"
     :indent="24"
+    default-value="home-index"
     @update:value="clickMenuItem"
   />
 </template>
@@ -34,7 +35,7 @@ function renderIcon(icon) {
 const menus = [
   {
     label: '首页',
-    key: 'home',
+    key: 'home-index',
     icon: renderIcon(HomeIcon),
   },
   {
