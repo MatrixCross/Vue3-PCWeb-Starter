@@ -1,5 +1,3 @@
-import exp from 'constants'
-
 export interface requestParams {
   method: string
   body: any

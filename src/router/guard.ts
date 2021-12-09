@@ -4,6 +4,7 @@ import { isNavigationFailure, Router } from 'vue-router'
 
 export function createGuard(router: Router) {
   router.beforeEach(async (to, from, next) => {
+    console.log(to, from)
     const Loading = window['$loading'] || null
     Loading && Loading.start()
 
