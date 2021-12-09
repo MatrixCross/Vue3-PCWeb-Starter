@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import { resolve } from 'path'
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig(async ({ mode }) => {
   const root = process.cwd()
@@ -12,6 +13,10 @@ export default defineConfig(async ({ mode }) => {
       vue(),
       eslintPlugin({
         include: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.tsx'],
+      }),
+      viteMockServe({
+        mockPath: 'mock',
+        localEnabled: mode === 'development',
       }),
     ],
     base: env.VITE_BASE_URL, // 设置打包路径
