@@ -12,6 +12,18 @@ const routes: Array<RouteRecordRaw> = [
         path: '',
         name: 'home-index',
         component: () => import('@/views/example/homePage.vue'),
+        meta: {
+          title: '首页',
+        },
+      },
+      {
+        path: 'keep-alive',
+        name: 'KeepAlive',
+        component: () => import('@/views/example/KeepAlive.vue'),
+        meta: {
+          title: '组件缓存',
+          keepAlive: true,
+        },
       },
     ],
   },
@@ -22,13 +34,19 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: 'project',
-        name: 'about-project',
-        component: () => import('@/components/HelloWorld.vue'),
+        name: 'AboutProject',
+        component: () => import('@/views/example/AboutProject.vue'),
+        meta: {
+          title: '关于项目',
+        },
       },
       {
         path: 'author',
-        name: 'about-author',
-        component: () => import('@/components/HelloWorld.vue'),
+        name: 'AboutAuthor',
+        component: () => import('@/views/example/AboutAuthor.vue'),
+        meta: {
+          title: '关于作者',
+        },
       },
     ],
   },

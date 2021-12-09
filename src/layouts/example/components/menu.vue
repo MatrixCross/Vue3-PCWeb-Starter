@@ -39,18 +39,23 @@ const menus = [
     icon: renderIcon(HomeIcon),
   },
   {
+    label: '组件缓存演示',
+    key: 'KeepAlive',
+    icon: renderIcon(HomeIcon),
+  },
+  {
     label: '关于',
     key: 'about',
     icon: renderIcon(InfoIcon),
     children: [
       {
         label: '关于项目',
-        key: 'about-project',
+        key: 'AboutProject',
         icon: renderIcon(ProjectIcon),
       },
       {
         label: '关于作者',
-        key: 'about-author',
+        key: 'AboutAuthor',
         icon: renderIcon(PersonIcon),
       },
     ],

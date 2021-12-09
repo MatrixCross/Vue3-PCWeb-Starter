@@ -81,7 +81,7 @@ onMounted(() => {
     flex: auto;
     min-height: 100vh;
     position: relative;
-    padding: 64px 10px 0 10px;
+    padding: 74px 10px 0 10px;
   }
 
   .n-layout-header.n-layout-header--absolute-positioned {

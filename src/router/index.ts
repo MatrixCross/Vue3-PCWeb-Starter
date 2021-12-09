@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import type { App } from 'vue'
+import { createGuard } from './guard'
 
 // 从modules目录动态导入路由
 const modules = import.meta.globEager('./modules/**/*.ts')
@@ -18,15 +19,19 @@ routeModuleList.push({
   redirect: '/home',
 })
 
+// 导出默认静态路由
+export const constantRoute: any[] = [...routeModuleList]
+
 // 创建路由实例
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL as string),
   routes: routeModuleList,
 })
 
-// 挂载路由
+// 挂载路由和创建路由守卫
 export function setupRouter(app: App<Element>) {
   app.use(router)
+  createGuard(router)
 }
 
 // 也可以使用导出的路由实例进行挂载

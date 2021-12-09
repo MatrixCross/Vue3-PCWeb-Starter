@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full p-4 home-page">
+  <div class="h-full home-page">
     <n-card hoverable>
       <div class="flex flex-col items-center justify-center">
         <div class="logo">
