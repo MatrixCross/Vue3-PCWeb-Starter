@@ -3,7 +3,7 @@ import { storage } from '@/utils/storage'
 import { isNavigationFailure, Router } from 'vue-router'
 
 export function createGuard(router: Router) {
-  router.beforeEach(async (to, from, next) => {
+  router.beforeEach(async (_to, _from, next) => {
     const Loading = window['$loading'] || null
     Loading && Loading.start()
 
