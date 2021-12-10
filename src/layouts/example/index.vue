@@ -15,16 +15,28 @@
         <logo-view :collapsed="collapsed" />
         <menu-view :collapsed="collapsed" :inverted="inverted"></menu-view>
       </n-layout-sider>
-      <n-layout :inverted="inverted">
+      <n-layout
+        :inverted="inverted"
+        class="min-h-full"
+        content-style="display: flex;flex-direction: column;"
+      >
         <n-layout-header :inverted="inverted" position="absolute">
           <header-view v-model:collapsed="collapsed" :inverted="inverted" />
         </n-layout-header>
         <n-layout-content
-          class="layout-content"
-          content-style="height: 100%;"
+          class="flex flex-1 layout-content"
+          content-style="width: 100%;display: flex;flex-direction: column;"
           :class="{ 'layout-default-background': inverted === false }"
         >
-          <content-view />
+          <div class="flex-1 p-16px">
+            <content-view />
+          </div>
+          <n-layout-footer
+            class="flex items-center justify-center"
+            :class="{ 'bg-white': inverted === false }"
+          >
+            <div class="footer">Copyright ©2021 Vue3 Starter</div>
+          </n-layout-footer>
         </n-layout-content>
       </n-layout>
     </n-layout>
@@ -32,7 +44,13 @@
 </template>
 
 <script lang="ts" setup>
-import { NLayout, NLayoutSider, NLayoutContent, NLayoutHeader } from 'naive-ui'
+import {
+  NLayout,
+  NLayoutSider,
+  NLayoutContent,
+  NLayoutHeader,
+  NLayoutFooter,
+} from 'naive-ui'
 import { ref, computed, onMounted } from 'vue'
 import { useSettingStore } from '@/store/modules/setting'
 import AppProvider from './Application/AppProvider.vue'
@@ -78,10 +96,17 @@ onMounted(() => {
   }
 
   .layout-content {
-    flex: auto;
-    min-height: 100vh;
+    flex: 1;
     position: relative;
-    padding: 74px 10px 0 10px;
+    margin-top: 64px;
+
+    .header-space-placeholder {
+      height: 64px;
+    }
+  }
+
+  .n-layout-footer {
+    min-height: 40px;
   }
 
   .n-layout-header.n-layout-header--absolute-positioned {

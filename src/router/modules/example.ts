@@ -4,6 +4,18 @@ import layout from '@/layouts/example/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/redirect',
+    name: 'RedirectComponent',
+    component: layout,
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        name: 'RedirectComponent',
+        component: () => import('@/views/redirect/index.vue'),
+      },
+    ],
+  },
+  {
     path: '/home',
     name: 'home',
     component: layout,

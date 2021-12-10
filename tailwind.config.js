@@ -17,6 +17,12 @@ module.exports = {
         '2xl': '1600px',
       },
     },
+    borderRadius: {
+      '16px': '16px',
+    },
+    padding: {
+      '16px': '16px',
+    },
   },
   variants: {
     extend: {},

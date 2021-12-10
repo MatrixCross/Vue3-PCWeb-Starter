@@ -1,6 +1,7 @@
 <template>
   <div class="layout-header">
     <div class="layout-header-left">
+      <!-- 菜单收起 -->
       <div
         class="ml-1 layout-header-trigger layout-header-trigger-min"
         @click="() => $emit('update:collapsed', !collapsed)"
@@ -12,9 +13,19 @@
           <MenuFoldOutlined />
         </n-icon>
       </div>
+      <!-- 刷新 -->
+      <div
+        class="mr-1 layout-header-trigger layout-header-trigger-min"
+        @click="reloadPage"
+      >
+        <n-icon size="18">
+          <ReloadOutline />
+        </n-icon>
+      </div>
+      <!-- 深色开关 -->
       <div class="ml-1 layout-header-trigger layout-header-trigger-min">
         <div class="flex items-center h-full">
-          <n-switch @update:value="handle">
+          <n-switch @update:value="darkThemeSwitch">
             <template #checked>深色</template>
             <template #unchecked>浅色</template>
           </n-switch>
@@ -41,26 +52,37 @@
 <script lang="ts" setup>
 import { NTooltip, NIcon, NSwitch } from 'naive-ui'
 import { useSettingStore } from '@/store/modules/setting'
+import { useRouter, useRoute } from 'vue-router'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   GithubOutlined,
 } from '@vicons/antd'
+import { ReloadOutline } from '@vicons/ionicons5'
+import { unref } from 'vue'
 defineProps<{
   collapsed: boolean
   inverted: boolean
 }>()
 defineEmits(['update:collapsed'])
 const settingStore = useSettingStore()
+const router = useRouter()
+const route = useRoute()
 const openGithub = () => {
   window.open('https://github.com/Wyatex/Vue3-starter')
 }
-const handle = e => {
+const darkThemeSwitch = e => {
   if (e) {
     settingStore.darkTheme = e
   } else {
     settingStore.darkTheme = e
   }
+}
+// 刷新页面
+const reloadPage = () => {
+  router.push({
+    path: '/redirect' + unref(route).fullPath,
+  })
 }
 </script>
 

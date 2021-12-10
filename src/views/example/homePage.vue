@@ -1,34 +1,29 @@
 <template>
-  <div class="h-full home-page">
-    <n-card hoverable>
-      <div class="flex flex-col items-center justify-center">
-        <div class="logo">
-          <img src="@/assets/logo.png" alt="" />
-        </div>
-        <div class="flex flex-col items-center justify-center slogen">
-          <n-gradient-text type="success" :size="64">
-            Vue3 Starter
-          </n-gradient-text>
-          <n-h1 prefix="bar" type="success">
-            <n-gradient-text type="danger">
-              一个开箱即用的Vue3项目模板
-            </n-gradient-text>
-          </n-h1>
-        </div>
-        <div class="mt-4 btns">
-          <n-button
-            size="large"
-            type="primary"
-            class="mr-8"
-            @click="handlerBtn"
-          >
-            关于项目
-          </n-button>
-          <n-button size="large" @click="handlerBtn">作者Github</n-button>
-        </div>
+  <n-card
+    hoverable
+    class="min-h-full home-page rounded-16px"
+    content-style="display: flex; flex-direction: column; justify-content:center; align-item: center;"
+  >
+    <div class="flex flex-col items-center justify-center">
+      <div class="logo">
+        <img src="@/assets/logo.png" alt="" />
       </div>
-    </n-card>
-  </div>
+      <n-gradient-text type="success" :size="64">
+        Vue3 Starter
+      </n-gradient-text>
+      <n-h1 prefix="bar" type="success">
+        <n-gradient-text type="danger">
+          一个开箱即用的Vue3项目模板
+        </n-gradient-text>
+      </n-h1>
+      <div class="mt-4 btns">
+        <n-button size="large" type="primary" class="mr-8" @click="handlerBtn">
+          关于项目
+        </n-button>
+        <n-button size="large" @click="handlerBtn">作者Github</n-button>
+      </div>
+    </div>
+  </n-card>
 </template>
 
 <script lang="ts" setup>
@@ -44,12 +39,4 @@ const handlerBtn = () => {
 }
 </script>
 
-<style lang="less" scoped>
-.home-page {
-  min-height: 500px;
-
-  .details {
-    max-width: 1000px;
-  }
-}
-</style>
+<style lang="less" scoped></style>
