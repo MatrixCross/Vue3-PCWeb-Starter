@@ -6,7 +6,7 @@
     :collapsed-width="64"
     :collapsed-icon-size="20"
     :indent="24"
-    default-value="home-index"
+    :default-value="defaultValue"
     @update:value="clickMenuItem"
   />
 </template>
@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import { h } from 'vue'
 import { NMenu, NIcon } from 'naive-ui'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import {
   PersonOutline as PersonIcon,
   HomeOutline as HomeIcon,
@@ -22,7 +22,8 @@ import {
 } from '@vicons/ionicons5'
 import BlogIcon from './icons/blogIcon.vue'
 import ProjectIcon from './icons/projectIcon.vue'
-
+const route = useRoute()
+const defaultValue = route.name as string
 defineProps<{
   collapsed: boolean
   inverted: boolean

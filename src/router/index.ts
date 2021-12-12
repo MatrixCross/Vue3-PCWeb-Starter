@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import type { App } from 'vue'
 import { createGuard } from './guard'
 
@@ -24,7 +24,7 @@ export const constantRoute: any[] = [...routeModuleList]
 
 // 创建路由实例
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_BASE_URL as string),
+  history: createWebHashHistory(import.meta.env.VITE_BASE_URL as string),
   routes: routeModuleList,
 })
 
