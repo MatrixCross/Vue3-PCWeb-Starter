@@ -1,0 +1,1 @@
+import{b as n,x as s,y as u,a3 as p,B as c}from"./vendor.0bb9d6ff.js";var i=n({name:"RedirectComponent",setup(){const o=s(),r=u();return p(()=>{const{params:t,query:a}=o,{path:e}=t;r.replace({path:"/"+(Array.isArray(e)?e.join("/"):e),query:a})}),()=>c("div",null)}});export{i as default};
