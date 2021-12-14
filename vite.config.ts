@@ -7,6 +7,13 @@ import { viteMockServe } from 'vite-plugin-mock'
 export default defineConfig(async ({ mode }) => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
+  const apiUrl = env.VITE_API_URL
+  const proxy = {}
+  proxy[apiUrl] = {
+    target: env.VITE_PROXY,
+    changeOrigin: true,
+    rewrite: path => path.replace(eval(`/^\\${apiUrl}/`), ''),
+  }
 
   return {
     plugins: [
@@ -29,9 +36,7 @@ export default defineConfig(async ({ mode }) => {
     server: {
       host: true,
       port: 8080,
-      proxy: {
-        '/api': 'http://localhost:8199/',
-      },
+      proxy,
     },
     esbuild: {
       jsxFactory: 'h',
