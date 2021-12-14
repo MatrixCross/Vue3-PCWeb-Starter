@@ -16,12 +16,12 @@ module.exports = {
         xl: '1200px',
         '2xl': '1600px',
       },
-    },
-    borderRadius: {
-      '16px': '16px',
-    },
-    padding: {
-      '16px': '16px',
+      borderRadius: {
+        '16px': '16px',
+      },
+      padding: {
+        '16px': '16px',
+      },
     },
   },
   variants: {
