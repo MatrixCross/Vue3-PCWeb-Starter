@@ -22,6 +22,21 @@
           <ReloadOutline />
         </n-icon>
       </div>
+      <!--切换全屏-->
+      <div
+        class="mr-1 layout-header-trigger layout-header-trigger-min"
+        @click="toggleFullScreen"
+      >
+        <n-tooltip placement="bottom">
+          <template #trigger>
+            <n-icon size="18">
+              <FullscreenOutlined v-if="!isFullScreen" />
+              <FullscreenExitOutlined v-else />
+            </n-icon>
+          </template>
+          <span>全屏</span>
+        </n-tooltip>
+      </div>
     </div>
     <div class="layout-header-right">
       <!-- 深色开关 -->
@@ -59,10 +74,13 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { NTooltip, NIcon } from 'naive-ui'
 import { useSettingStore } from '@/store/modules/setting'
 import { useRouter, useRoute } from 'vue-router'
 import {
+  FullscreenOutlined,
+  FullscreenExitOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   GithubOutlined,
@@ -90,6 +108,25 @@ const reloadPage = () => {
   router.push({
     path: '/redirect' + unref(route).fullPath,
   })
+}
+
+const isFullScreen = ref(false)
+// 切换全屏图标
+const toggleFullscreenIcon = () =>
+  (isFullScreen.value = document.fullscreenElement !== null ? true : false)
+
+// 监听全屏切换事件
+document.addEventListener('fullscreenchange', toggleFullscreenIcon)
+
+// 全屏切换
+const toggleFullScreen = () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen()
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen()
+    }
+  }
 }
 </script>
 

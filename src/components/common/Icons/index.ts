@@ -2,6 +2,8 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   GithubOutlined,
+  FullscreenOutlined,
+  FullscreenExitOutlined,
 } from '@vicons/antd'
 
 import {
@@ -22,6 +24,8 @@ export {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   GithubOutlined,
+  FullscreenOutlined,
+  FullscreenExitOutlined,
   // ionicons5
   PersonOutline,
   HomeOutline,
