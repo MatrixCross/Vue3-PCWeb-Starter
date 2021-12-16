@@ -12,7 +12,7 @@ export default defineConfig(async ({ mode }) => {
   proxy[apiUrl] = {
     target: env.VITE_PROXY,
     changeOrigin: true,
-    rewrite: path => path.replace(eval(`/^\\${apiUrl}/`), ''),
+    rewrite: path => path.replace(new RegExp(`^${apiUrl}`), ''),
   }
 
   return {

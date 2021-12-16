@@ -7,9 +7,9 @@ import type {
 
 declare global {
   interface Window {
-    $loading?: LoadingBarProviderInst
-    $dialog?: DialogProviderInst
-    $message?: MessageProviderInst
-    $notification?: NotificationProviderInst
+    $loading: LoadingBarProviderInst
+    $dialog: DialogProviderInst
+    $message: MessageProviderInst
+    $notification: NotificationProviderInst
   }
 }

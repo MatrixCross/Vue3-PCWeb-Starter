@@ -6,17 +6,10 @@
   </n-card>
 </template>
 <script lang="ts">
-import { NH1, NCard, NButton, NH2 } from 'naive-ui'
 import { ref, defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'KeepAlive',
-  components: {
-    NH1,
-    NCard,
-    NButton,
-    NH2,
-  },
   setup() {
     let count = ref(0)
     return {

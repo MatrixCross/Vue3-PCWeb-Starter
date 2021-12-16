@@ -27,11 +27,9 @@
 </template>
 
 <script lang="ts" setup>
-import { NGradientText, NH1, NCard, NButton } from 'naive-ui'
-
 const handlerBtn = () => {
-  window['$loading'].error()
-  window['$notification'].error({
+  window.$loading.error()
+  window.$notification.error({
     title: '功能未完善',
     content: '请耐心等待功能实现',
     duration: 3000,
