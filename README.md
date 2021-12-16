@@ -62,10 +62,4 @@ yarn build
 
 ## UI 组件库
 
-项目轻度依赖于 NaiveUI，如果需要切换到其他的组件库，只需要：
-
-1. 去除 naive 依赖
-2. 删除 src/layouts/example 和 src/views 下的 vue 组件
-3. 安装你需要的组件库
-
-NaiveUI 还使用了 xicon 作为 icon 物料库，如果不需要也可以一同去除。
+本分支（master）使用的是 NaiveUI，后续会在其他分支使用其他的组件库，比如 AntDV 和 ElementUI，敬请期待！

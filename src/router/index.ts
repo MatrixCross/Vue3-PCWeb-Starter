@@ -12,15 +12,8 @@ Object.keys(modules).forEach(key => {
   routeModuleList.push(...modList)
 })
 
-// 加入首页
-routeModuleList.push({
-  path: '/',
-  name: 'Root',
-  redirect: '/home',
-})
-
 // 导出默认静态路由
-export const constantRoute: any[] = [...routeModuleList]
+export const constantRoute: RouteRecordRaw[] = [...routeModuleList]
 
 // 创建路由实例
 const router = createRouter({

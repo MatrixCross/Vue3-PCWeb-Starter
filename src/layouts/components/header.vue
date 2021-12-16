@@ -22,17 +22,26 @@
           <ReloadOutline />
         </n-icon>
       </div>
-      <!-- 深色开关 -->
-      <div class="ml-1 layout-header-trigger layout-header-trigger-min">
-        <div class="flex items-center h-full">
-          <n-switch @update:value="darkThemeSwitch">
-            <template #checked>深色</template>
-            <template #unchecked>浅色</template>
-          </n-switch>
-        </div>
-      </div>
     </div>
     <div class="layout-header-right">
+      <!-- 深色开关 -->
+      <div
+        class="ml-1 layout-header-trigger layout-header-trigger-min"
+        @click="darkThemeSwitch"
+      >
+        <div class="flex items-center h-full">
+          <n-tooltip placement="bottom">
+            <template #trigger>
+              <n-icon size="18">
+                <Moon v-if="settingStore.darkTheme" />
+                <Sunny v-else />
+              </n-icon>
+            </template>
+            <span> 深浅色切换 </span>
+          </n-tooltip>
+        </div>
+      </div>
+      <!-- github -->
       <div
         class="layout-header-trigger layout-header-trigger-min"
         @click="openGithub"
@@ -50,15 +59,17 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { NTooltip, NIcon, NSwitch } from 'naive-ui'
+import { NTooltip, NIcon } from 'naive-ui'
 import { useSettingStore } from '@/store/modules/setting'
 import { useRouter, useRoute } from 'vue-router'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   GithubOutlined,
-} from '@vicons/antd'
-import { ReloadOutline } from '@vicons/ionicons5'
+  ReloadOutline,
+  Moon,
+  Sunny,
+} from '@/components/common/Icons'
 import { unref } from 'vue'
 defineProps<{
   collapsed: boolean
@@ -71,12 +82,8 @@ const route = useRoute()
 const openGithub = () => {
   window.open('https://github.com/Wyatex/Vue3-starter')
 }
-const darkThemeSwitch = e => {
-  if (e) {
-    settingStore.darkTheme = e
-  } else {
-    settingStore.darkTheme = e
-  }
+const darkThemeSwitch = () => {
+  settingStore.darkTheme = !settingStore.darkTheme
 }
 // 刷新页面
 const reloadPage = () => {

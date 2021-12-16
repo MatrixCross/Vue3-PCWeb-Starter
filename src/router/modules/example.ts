@@ -1,24 +1,24 @@
 import { RouteRecordRaw } from 'vue-router'
-
-import layout from '@/layouts/example/index.vue'
+import { renderIcon } from '@/utils'
+import layout from '@/layouts/index.vue'
+import {
+  PersonOutline as PersonIcon,
+  HomeOutline as HomeIcon,
+  InformationCircleOutline as InfoIcon,
+  BlogIcon,
+  ProjectIcon,
+  ComponentIcon,
+} from '@/components/common/Icons'
 
 const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/redirect',
-    name: 'RedirectComponent',
-    component: layout,
-    children: [
-      {
-        path: '/redirect/:path(.*)',
-        name: 'RedirectComponent',
-        component: () => import('@/views/redirect/index.vue'),
-      },
-    ],
-  },
   {
     path: '/home',
     name: 'home',
     component: layout,
+    meta: {
+      isRoot: true,
+      icon: renderIcon(HomeIcon),
+    },
     children: [
       {
         path: '',
@@ -28,6 +28,17 @@ const routes: Array<RouteRecordRaw> = [
           title: '首页',
         },
       },
+    ],
+  },
+  {
+    path: '/comp',
+    name: 'comp',
+    component: layout,
+    meta: {
+      title: '组件实例',
+      icon: renderIcon(ComponentIcon),
+    },
+    children: [
       {
         path: 'keep-alive',
         name: 'KeepAlive',
@@ -35,6 +46,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '组件缓存',
           keepAlive: true,
+          icon: renderIcon(ComponentIcon),
         },
       },
     ],
@@ -43,6 +55,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/about',
     name: 'about',
     component: layout,
+    meta: {
+      icon: renderIcon(InfoIcon),
+      title: '关于',
+    },
     children: [
       {
         path: 'project',
@@ -50,6 +66,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/example/AboutProject.vue'),
         meta: {
           title: '关于项目',
+          icon: renderIcon(ProjectIcon),
         },
       },
       {
@@ -58,9 +75,20 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/example/AboutAuthor.vue'),
         meta: {
           title: '关于作者',
+          icon: renderIcon(PersonIcon),
         },
       },
     ],
+  },
+  {
+    path: '/blog',
+    name: 'https://wyatex.gitee.io',
+    component: layout,
+    meta: {
+      title: '作者博客',
+      icon: renderIcon(BlogIcon),
+      isRoot: true,
+    },
   },
 ]
 

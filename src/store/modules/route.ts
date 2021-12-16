@@ -4,14 +4,14 @@ import { constantRoute } from '@/router'
 
 export interface IRouteState {
   keepAliveComponents: string[]
-  routers: any[]
+  routes: any[]
 }
 
 export const useRouteStore = defineStore({
   id: 'route',
   state: (): IRouteState => ({
     keepAliveComponents: [],
-    routers: constantRoute,
+    routes: constantRoute,
   }),
   actions: {
     setKeepAliveComponents(compNames) {

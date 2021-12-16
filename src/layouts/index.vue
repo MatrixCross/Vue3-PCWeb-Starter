@@ -1,5 +1,5 @@
 <template>
-  <app-provider>
+  <naive-provider>
     <n-layout class="layout" has-sider>
       <n-layout-sider
         :collapsed="collapsed"
@@ -40,7 +40,7 @@
         </n-layout-content>
       </n-layout>
     </n-layout>
-  </app-provider>
+  </naive-provider>
 </template>
 
 <script lang="ts" setup>
@@ -53,7 +53,7 @@ import {
 } from 'naive-ui'
 import { ref, computed, onMounted } from 'vue'
 import { useSettingStore } from '@/store/modules/setting'
-import AppProvider from './Application/AppProvider.vue'
+import NaiveProvider from '@/components/common/NaiveProvider/index.vue'
 import MenuView from './components/menu.vue'
 import HeaderView from './components/header.vue'
 import ContentView from './components/content.vue'
