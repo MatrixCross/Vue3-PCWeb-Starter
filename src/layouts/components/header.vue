@@ -78,16 +78,6 @@ import { ref } from 'vue'
 import { NTooltip, NIcon } from 'naive-ui'
 import { useSettingStore } from '@/store/modules/setting'
 import { useRouter, useRoute } from 'vue-router'
-import {
-  FullscreenOutlined,
-  FullscreenExitOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  GithubOutlined,
-  ReloadOutline,
-  Moon,
-  Sunny,
-} from '@/components/common/Icons'
 import { unref } from 'vue'
 defineProps<{
   collapsed: boolean
