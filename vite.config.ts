@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import { resolve } from 'path'
 import { viteMockServe } from 'vite-plugin-mock'
+import windiCss from 'vite-plugin-windicss'
 
 export default defineConfig(async ({ mode }) => {
   const root = process.cwd()
@@ -25,6 +26,7 @@ export default defineConfig(async ({ mode }) => {
         mockPath: 'mock',
         localEnabled: mode === 'development',
       }),
+      windiCss()
     ],
     base: env.VITE_BASE_URL, // 设置打包路径
     resolve: {
