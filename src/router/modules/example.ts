@@ -1,13 +1,10 @@
 import { RouteRecordRaw } from 'vue-router'
-import { renderIcon } from '@/utils'
+import { renderIcon, renderSvgIcon } from '@/utils'
 import layout from '@/layouts/index.vue'
 import {
   PersonOutline as PersonIcon,
   HomeOutline as HomeIcon,
   InformationCircleOutline as InfoIcon,
-  BlogIcon,
-  ProjectIcon,
-  ComponentIcon,
 } from '@/components/common/Icons'
 
 const routes: Array<RouteRecordRaw> = [
@@ -36,7 +33,7 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       title: '组件实例',
-      icon: renderIcon(ComponentIcon),
+      icon: renderSvgIcon('component'),
     },
     children: [
       {
@@ -46,7 +43,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '组件缓存',
           keepAlive: true,
-          icon: renderIcon(ComponentIcon),
+          icon: renderSvgIcon('component'),
         },
       },
     ],
@@ -66,7 +63,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/example/AboutProject.vue'),
         meta: {
           title: '关于项目',
-          icon: renderIcon(ProjectIcon),
+          icon: renderSvgIcon('project'),
         },
       },
       {
@@ -86,7 +83,7 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       title: '作者博客',
-      icon: renderIcon(BlogIcon),
+      icon: renderSvgIcon('blog'),
       isRoot: true,
     },
   },

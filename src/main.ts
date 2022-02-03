@@ -1,4 +1,5 @@
 import 'virtual:windi.css'
+import 'virtual:svg-icons-register'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { store } from '@/store'

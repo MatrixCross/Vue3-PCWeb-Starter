@@ -5,16 +5,7 @@
     <n-button @click="count++">+1</n-button>
   </n-card>
 </template>
-<script lang="ts">
-import { ref, defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'KeepAlive',
-  setup() {
-    let count = ref(0)
-    return {
-      count,
-    }
-  },
-})
+<script lang="ts" setup name="KeepAlive">
+import { ref } from 'vue'
+let count = ref(0)
 </script>

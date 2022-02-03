@@ -3,7 +3,9 @@ import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import { resolve } from 'path'
 import { viteMockServe } from 'vite-plugin-mock'
-import windiCss from 'vite-plugin-windicss'
+import windiCSS from 'vite-plugin-windicss'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+import { createSvgIconsPlugin as svgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig(async ({ mode }) => {
   const root = process.cwd()
@@ -26,7 +28,12 @@ export default defineConfig(async ({ mode }) => {
         mockPath: 'mock',
         localEnabled: mode === 'development',
       }),
-      windiCss()
+      svgIconsPlugin({
+        iconDirs: [resolve(__dirname, 'src/assets/icons')],
+        symbolId: 'icon-[dir]-[name]',
+      }),
+      windiCSS(),
+      vueSetupExtend(),
     ],
     base: env.VITE_BASE_URL, // 设置打包路径
     resolve: {
