@@ -30,12 +30,6 @@ export default defineConfig({
   },
   theme: {
     extend: {
-      borderRadius: {
-        '16px': '16px',
-      },
-      padding: {
-        '16px': '16px',
-      },
       colors: {
         primary: 'var(--primary-color)',
         'primary-hover': 'var(--primary-color-hover)',
