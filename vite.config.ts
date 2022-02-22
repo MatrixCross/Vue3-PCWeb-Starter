@@ -5,6 +5,7 @@ import { resolve } from 'path'
 import { viteMockServe } from 'vite-plugin-mock'
 import windiCSS from 'vite-plugin-windicss'
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+import { createHtmlPlugin } from 'vite-plugin-html'
 import { createSvgIconsPlugin as svgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig(async ({ mode }) => {
@@ -34,6 +35,14 @@ export default defineConfig(async ({ mode }) => {
       }),
       windiCSS(),
       vueSetupExtend(),
+      createHtmlPlugin({
+        minify: true,
+        inject: {
+          data: {
+            appTitle: env.VITE_APP_TITLE,
+          },
+        },
+      }),
     ],
     base: env.VITE_BASE_URL, // 设置打包路径
     resolve: {
@@ -59,6 +68,10 @@ export default defineConfig(async ({ mode }) => {
           javascriptEnabled: true,
         },
       },
+    },
+    build: {
+      brotliSize: false,
+      sourcemap: false,
     },
   }
 })
