@@ -2,7 +2,7 @@
   <div class="logo">
     <transition :name="getTransitionName" mode="out-in" appear>
       <img v-if="collapsed" src="@/assets/logo.png" alt="" />
-      <h2 v-else class="title">Vue3 Starter</h2>
+      <span v-else class="text-xl font-bold">Vue3 Starter</span>
     </transition>
   </div>
 </template>
@@ -31,10 +31,6 @@ const getTransitionName = computed(() => settingStore.animationType)
   img {
     width: auto;
     height: 32px;
-  }
-
-  .title {
-    margin: 0;
   }
 }
 </style>
