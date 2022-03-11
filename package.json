@@ -6,7 +6,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "test": "vitest --environment jsdom"
+    "test": "vitest --environment jsdom",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "axios": "^0.26.1",
