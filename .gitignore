@@ -3,3 +3,5 @@ node_modules
 *.local
 pnpm-lock.yaml
 yarn.lock
+
+components.d.ts

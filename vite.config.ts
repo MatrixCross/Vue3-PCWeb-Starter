@@ -8,22 +8,27 @@ import windiCSS from 'vite-plugin-windicss'
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { createSvgIconsPlugin as svgIconsPlugin } from 'vite-plugin-svg-icons'
+import components from 'unplugin-vue-components/vite'
+import {NaiveUiResolver} from 'unplugin-vue-components/resolvers'
 
 export default defineConfig(async ({ mode }) => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
   const apiUrl = env.VITE_API_URL
-  const proxy = {}
+  const proxy: any = {}
   proxy[apiUrl] = {
     target: env.VITE_PROXY,
     changeOrigin: true,
-    rewrite: path => path.replace(new RegExp(`^${apiUrl}`), ''),
+    rewrite: (path: string) => path.replace(new RegExp(`^${apiUrl}`), ''),
   }
 
   return {
     plugins: [
       vue(),
       vueJsx(),
+      components({
+        resolvers:[NaiveUiResolver()]
+      }),
       viteMockServe({
         mockPath: 'mock',
         localEnabled: mode === 'development',
