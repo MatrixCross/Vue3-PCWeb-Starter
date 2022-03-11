@@ -65,5 +65,10 @@ export default defineConfig(async ({ mode }) => {
     build: {
       brotliSize: false,
     },
+    test: {
+      transformMode: {
+        web: [/\.[jt]sx$/],
+      },
+    },
   }
 })
