@@ -8,7 +8,7 @@
   </router-view>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useRouteStore } from '@/store/modules/route'
 import { useSettingStore } from '@/store/modules/setting'
 import { computed } from 'vue'

@@ -14,7 +14,7 @@ export const useRouteStore = defineStore({
     routes: constantRoute,
   }),
   actions: {
-    setKeepAliveComponents(compNames) {
+    setKeepAliveComponents(compNames: string[]) {
       // 设置需要缓存的组件
       this.keepAliveComponents = compNames
     },

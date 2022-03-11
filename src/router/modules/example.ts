@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import { renderIcon, renderSvgIcon } from '@/utils'
 import layout from '@/layouts/index.vue'
 import {
@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '',
         name: 'home-index',
-        component: () => import('@/views/example/homePage.vue'),
+        component: () => import('@/views/example/HomePage.vue'),
         meta: {
           title: '首页',
         },

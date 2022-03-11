@@ -1,41 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "strictFunctionTypes": false,
-    "jsx": "preserve",
-    "baseUrl": ".",
-    "allowJs": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "experimentalDecorators": true,
-    "lib": ["dom", "esnext"],
-    "types": ["vite/client", "jest", "vite-plugin-svg-icons/client"],
-    "typeRoots": ["./node_modules/@types/", "./types"],
-    "noImplicitAny": false,
-    "skipLibCheck": true,
-    "paths": {
-      "@/*": ["src/*"],
-      "/#/*": ["types/*"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.vite-config.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
     }
-  },
-  "include": [
-    "tests/**/*.ts",
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "types/**/*.d.ts",
-    "types/**/*.ts",
-    "mock/**/*.ts",
-    "vite.config.ts"
-  ],
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  ]
 }
