@@ -98,7 +98,7 @@ onMounted(() => {
   .layout-content {
     flex: 1;
     position: relative;
-    margin-top: 64px;
+    margin-top: 60px;
 
     .header-space-placeholder {
       height: 64px;

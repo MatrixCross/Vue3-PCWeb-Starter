@@ -20,7 +20,9 @@
         <n-button size="large" type="primary" class="mr-8" @click="handlerBtn">
           关于项目
         </n-button>
-        <n-button size="large" @click="handlerBtn">作者Github</n-button>
+        <n-button size="large" @click="onOpenMyGithub">
+        作者Github
+        </n-button>
       </div>
     </div>
   </n-card>
@@ -34,6 +36,9 @@ const handlerBtn = () => {
     content: '请耐心等待功能实现',
     duration: 3000,
   })
+}
+const onOpenMyGithub = () => {
+  window.open('https://github.com/Wyatex')
 }
 </script>
 

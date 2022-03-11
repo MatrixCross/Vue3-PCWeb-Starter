@@ -48,11 +48,11 @@ yarn build
 - CSS 预处理：[Less](https://less.bootcss.com/)
 - 原子化 CSS 框架：[WindiCSS](https://cn.windicss.org/)
 - HTTP 工具：[Axios](https://axios-http.com/)
-- JSX 处理：[@vite-plugin-jsx](https://github.com/vitejs/vite)
+- JSX 处理：[@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
 - 代码规范：[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)
 - 单元测试：[vitest](https://vitest.dev/) + [vue-test-utils](https://vue-test-utils.vuejs.org/zh/)
 - 组件库：[Naive-UI](https://www.naiveui.com/)
-- Icon 库：[xicon-ionicon5/antd](https://www.xicons.org/)
+- Icon 库：[@iconify/json](https://www.npmjs.com/package/@iconify/json) + [@iconify/vue](https://www.npmjs.com/package/@iconify/vue) + [unplugin-icons](https://github.com/antfu/unplugin-icons)
 
 ## 项目配置
 
