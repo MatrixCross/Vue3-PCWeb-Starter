@@ -54,6 +54,8 @@ yarn build
 - 组件库：[Naive-UI](https://www.naiveui.com/)
 - Icon 库：[@iconify/json](https://www.npmjs.com/package/@iconify/json) + [@iconify/vue](https://www.npmjs.com/package/@iconify/vue) + [unplugin-icons](https://github.com/antfu/unplugin-icons)
 
+> icon图标查找：[icones](https://icones.js.org/)
+
 ## 项目配置
 
 目前的主要配置项：
