@@ -48,9 +48,9 @@ yarn build
 - CSS 预处理：[Less](https://less.bootcss.com/)
 - 原子化 CSS 框架：[WindiCSS](https://cn.windicss.org/)
 - HTTP 工具：[Axios](https://axios-http.com/)
-- JSX 处理：[jsx-next](https://github.com/vuejs/jsx-next)
+- JSX 处理：[@vite-plugin-jsx](https://github.com/vitejs/vite)
 - 代码规范：[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)
-- 单元测试：[jest](https://jestjs.io/) + [vue-test-utils](https://vue-test-utils.vuejs.org/zh/) + [ts-jest](https://kulshekhar.github.io/ts-jest/) + [babel-jest](https://www.npmjs.com/package/babel-jest) + [vue3-jest](https://github.com/kulshekhar/ts-jest/)
+- 单元测试：[vitest](https://vitest.dev/) + [vue-test-utils](https://vue-test-utils.vuejs.org/zh/)
 - 组件库：[Naive-UI](https://www.naiveui.com/)
 - Icon 库：[xicon-ionicon5/antd](https://www.xicons.org/)
 
