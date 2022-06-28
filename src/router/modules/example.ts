@@ -1,6 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
-import { iconifyRender, renderSvgIcon } from '@/utils'
-import layout from '@/layouts/index.vue'
+import { iconifyRender } from '@/utils'
+import layout from '../../layouts/index.vue'
+import { h } from 'vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -28,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       title: '组件实例',
-      icon: renderSvgIcon('component'),
+      icon: iconifyRender('icon-park-outline:figma-component'),
     },
     children: [
       {
@@ -38,7 +39,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '组件缓存',
           keepAlive: true,
-          icon: renderSvgIcon('component'),
+          icon: iconifyRender('icon-park-outline:figma-component'),
         },
       },
       {
@@ -47,7 +48,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/example/UnKeep.vue'),
         meta: {
           title: '组件不缓存',
-          icon: renderSvgIcon('component'),
+          icon: iconifyRender('icon-park-outline:figma-component'),
         },
       },
     ],

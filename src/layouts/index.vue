@@ -44,13 +44,6 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  NLayout,
-  NLayoutSider,
-  NLayoutContent,
-  NLayoutHeader,
-  NLayoutFooter,
-} from 'naive-ui'
 import { ref, computed, onMounted } from 'vue'
 import { useSettingStore } from '@/store/modules/setting'
 import NaiveProvider from '@/components/common/NaiveProvider/index.vue'

@@ -20,8 +20,9 @@
         <n-button size="large" type="primary" class="mr-8" @click="handlerBtn">
           关于项目
         </n-button>
-        <n-button size="large" @click="onOpenMyGithub">
-        作者Github
+        <n-button size="large" @click="onOpenMyGithub" class="mr-8">
+          <template #icon><Icon icon="tabler:3d-cube-sphere" /></template>
+          作者Github
         </n-button>
       </div>
     </div>
@@ -29,6 +30,7 @@
 </template>
 
 <script lang="ts" setup>
+import { Icon } from '@iconify/vue'
 const handlerBtn = () => {
   window.$loading.error()
   window.$notification.error({

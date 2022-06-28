@@ -5,7 +5,7 @@
     <n-button @click="count++">+1</n-button>
   </n-card>
 </template>
-<script lang="ts" setup name="KeepAlive">
+<script lang="ts" setup>
 import { ref } from 'vue'
 let count = ref(0)
 </script>

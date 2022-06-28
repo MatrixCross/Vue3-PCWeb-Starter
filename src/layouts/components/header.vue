@@ -7,10 +7,10 @@
         @click="() => $emit('update:collapsed', !collapsed)"
       >
         <n-icon v-if="collapsed" size="20">
-          <icon-tabler:indent-increase />
+          <i-tabler:indent-increase />
         </n-icon>
         <n-icon v-else size="20">
-          <icon-tabler:indent-decrease />
+          <i-tabler:indent-decrease />
         </n-icon>
       </div>
       <!-- 刷新 -->
@@ -19,7 +19,7 @@
         @click="reloadPage"
       >
         <n-icon size="20">
-          <icon-ic:round-refresh :class="{ 'animate-spin': loading }" />
+          <i-ic:round-refresh :class="{ 'animate-spin': loading }" />
         </n-icon>
       </div>
       <!--切换全屏-->
@@ -30,8 +30,8 @@
         <n-tooltip placement="bottom">
           <template #trigger>
             <n-icon size="20">
-              <icon-ant-design:fullscreen-outlined v-if="!isFullScreen" />
-              <icon-ant-design:fullscreen-exit-outlined v-else />
+              <i-ant-design:fullscreen-outlined v-if="!isFullScreen" />
+              <i-ant-design:fullscreen-exit-outlined v-else />
             </n-icon>
           </template>
           <span>全屏</span>
@@ -48,8 +48,8 @@
           <n-tooltip placement="bottom">
             <template #trigger>
               <n-icon size="20">
-                <icon-mdi:moon-waxing-crescent v-if="settingStore.darkTheme" />
-                <icon-ic:outline-wb-sunny v-else />
+                <i-mdi:moon-waxing-crescent v-if="settingStore.darkTheme" />
+                <i-ic:outline-wb-sunny v-else />
               </n-icon>
             </template>
             <span> 深浅色切换 </span>
@@ -64,7 +64,7 @@
         <n-tooltip placement="bottom">
           <template #trigger>
             <n-icon size="20">
-              <icon-tabler:brand-github />
+              <i-tabler:brand-github />
             </n-icon>
           </template>
           <span> github </span>

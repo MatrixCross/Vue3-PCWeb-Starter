@@ -5,7 +5,7 @@
     :collapsed="collapsed"
     :collapsed-width="64"
     :collapsed-icon-size="20"
-    :indent="24"
+    :indent="15"
     :default-value="defaultValue"
     @update:value="clickMenuItem"
   />
