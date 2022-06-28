@@ -74,7 +74,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { NTooltip, NIcon } from 'naive-ui'
 import { useSettingStore } from '@/store/modules/setting'
 import { useRouteStore } from '@/store/modules/route'
 import useLoading from '@/hooks/common/useLoading'

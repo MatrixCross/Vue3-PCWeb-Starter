@@ -44,7 +44,6 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue'
 import { useSettingStore } from '@/store/modules/setting'
 import NaiveProvider from '@/components/common/NaiveProvider/index.vue'
 import MenuView from './components/menu.vue'

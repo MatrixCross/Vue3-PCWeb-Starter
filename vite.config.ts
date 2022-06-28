@@ -39,6 +39,9 @@ export default defineConfig(async ({ mode }) => {
       AutoImport({
         imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
         dts: true,
+        eslintrc: {
+          enabled: true,
+        },
       }),
       components({
         types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],

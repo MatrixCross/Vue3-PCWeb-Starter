@@ -12,8 +12,6 @@
 </template>
 
 <script lang="ts" setup>
-import { NMenu } from 'naive-ui'
-import { useRouter, useRoute } from 'vue-router'
 import { generatorMenu } from '@/utils/router'
 import { useRouteStore } from '@/store/modules/route'
 const route = useRoute()
