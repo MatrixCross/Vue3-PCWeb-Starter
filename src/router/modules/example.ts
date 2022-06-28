@@ -1,7 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { iconifyRender } from '@/utils'
 import layout from '../../layouts/index.vue'
-import { h } from 'vue'
 
 const routes: Array<RouteRecordRaw> = [
   {

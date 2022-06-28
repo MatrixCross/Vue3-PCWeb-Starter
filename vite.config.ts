@@ -1,8 +1,9 @@
 import { fileURLToPath, URL } from 'url'
 import { defineConfig, loadEnv } from 'vite'
-import unocss from 'unocss/vite';
+import unocss from 'unocss/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import AutoImport from 'unplugin-auto-import/vite'
 import { viteMockServe } from 'vite-plugin-mock'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import components from 'unplugin-vue-components/vite'
@@ -34,6 +35,10 @@ export default defineConfig(async ({ mode }) => {
             fileURLToPath(new URL('./src/assets/svg', import.meta.url))
           ),
         },
+      }),
+      AutoImport({
+        imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+        dts: true,
       }),
       components({
         types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],

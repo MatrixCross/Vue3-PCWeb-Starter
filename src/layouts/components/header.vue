@@ -74,13 +74,10 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { NTooltip, NIcon } from 'naive-ui'
 import { useSettingStore } from '@/store/modules/setting'
 import { useRouteStore } from '@/store/modules/route'
-import { useRouter, useRoute } from 'vue-router'
 import useLoading from '@/hooks/common/useLoading'
-import { unref } from 'vue'
 defineProps<{
   collapsed: boolean
   inverted: boolean
@@ -88,8 +85,6 @@ defineProps<{
 defineEmits(['update:collapsed'])
 const settingStore = useSettingStore()
 const routeStore = useRouteStore()
-const router = useRouter()
-const route = useRoute()
 const openGithub = () => {
   window.open('https://github.com/Wyatex/Vue3-starter')
 }
