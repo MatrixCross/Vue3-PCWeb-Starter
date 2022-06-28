@@ -46,7 +46,7 @@ yarn build
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
 - 状态管理：[pinia](https://pinia.esm.dev/)
 - CSS 预处理：[Less](https://less.bootcss.com/)
-- 原子化 CSS 框架：[WindiCSS](https://cn.windicss.org/)
+- CSS 引擎：[UnoCSS](https://github.com/unocss/unocss)
 - HTTP 工具：[Axios](https://axios-http.com/)
 - JSX 处理：[@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
 - 代码规范：[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)
