@@ -13,6 +13,11 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.json --fix"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
   "dependencies": {
     "@vueuse/core": "^8.9.4",
     "axios": "^0.27.2",
@@ -32,7 +37,7 @@
     "@types/crypto-js": "^4.1.1",
     "@types/jsdom": "^16.2.15",
     "@types/mockjs": "^1.0.6",
-    "@types/node": "^16.11.9",
+    "@types/node": "^18.0.6",
     "@vitejs/plugin-vue": "^3.0.1",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",

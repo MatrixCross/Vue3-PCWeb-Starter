@@ -2,14 +2,19 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'vue/setup-compiler-macros': true,
   },
   parser: 'vue-eslint-parser',
+  parserOptions: {
+    ecmaVersion: 12,
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+  },
+  plugins: ['vue', '@typescript-eslint'],
   extends: [
     'plugin:vue/vue3-essential',
-    'eslint:recommended',
     '@vue/eslint-config-typescript/recommended',
     '@vue/eslint-config-prettier',
+    '@vue/typescript/recommended',
     './.eslintrc-auto-import.json',
   ],
   overrides: [
