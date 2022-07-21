@@ -8,13 +8,12 @@ import { viteMockServe } from 'vite-plugin-mock'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import icons from 'unplugin-icons/vite' // iconify图标
+import icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
-export default defineConfig(async ({ mode }) => {
-  const root = process.cwd()
-  const env = loadEnv(mode, root)
+export default defineConfig(configEnv => {
+  const env = loadEnv(configEnv.mode, process.cwd())
   const apiUrl = env.VITE_API_URL
   const proxy: any = {}
   proxy[apiUrl] = {
@@ -54,7 +53,7 @@ export default defineConfig(async ({ mode }) => {
       }),
       viteMockServe({
         mockPath: 'mock',
-        localEnabled: mode === 'development',
+        localEnabled: configEnv.mode === 'development',
       }),
       createHtmlPlugin({
         minify: true,
@@ -65,7 +64,7 @@ export default defineConfig(async ({ mode }) => {
         },
       }),
     ],
-    base: env.VITE_BASE_URL, // 设置打包路径
+    base: env.VITE_BASE_URL,
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -76,6 +75,9 @@ export default defineConfig(async ({ mode }) => {
       port: 8080,
       proxy,
     },
+    preview: {
+      port: 8080,
+    },
     css: {
       preprocessorOptions: {
         less: {
@@ -85,7 +87,11 @@ export default defineConfig(async ({ mode }) => {
       },
     },
     build: {
-      brotliSize: false,
+      reportCompressedSize: false,
+      sourcemap: false,
+      commonjsOptions: {
+        ignoreTryCatch: false,
+      },
     },
     test: {
       transformMode: {

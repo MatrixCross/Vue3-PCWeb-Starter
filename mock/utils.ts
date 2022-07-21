@@ -20,7 +20,10 @@ export function successMessage({ message = 'ok' } = {}) {
   }
 }
 
-export function successData<T = Record<string, any>>(data: T, { message = 'ok' } = {}) {
+export function successData<T = Record<string, any>>(
+  data: T,
+  { message = 'ok' } = {}
+) {
   return {
     code: 0,
     data,
