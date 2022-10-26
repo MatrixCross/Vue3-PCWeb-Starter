@@ -46,13 +46,15 @@ yarn build
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
 - 状态管理：[pinia](https://pinia.esm.dev/)
 - CSS 预处理：[Less](https://less.bootcss.com/)
-- 原子化 CSS 框架：[WindiCSS](https://cn.windicss.org/)
+- CSS 引擎：[UnoCSS](https://github.com/unocss/unocss)
 - HTTP 工具：[Axios](https://axios-http.com/)
-- JSX 处理：[jsx-next](https://github.com/vuejs/jsx-next)
+- JSX 处理：[@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
 - 代码规范：[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)
-- 单元测试：[jest](https://jestjs.io/) + [vue-test-utils](https://vue-test-utils.vuejs.org/zh/) + [ts-jest](https://kulshekhar.github.io/ts-jest/) + [babel-jest](https://www.npmjs.com/package/babel-jest) + [vue3-jest](https://github.com/kulshekhar/ts-jest/)
+- 单元测试：[vitest](https://vitest.dev/) + [vue-test-utils](https://vue-test-utils.vuejs.org/zh/)
 - 组件库：[Naive-UI](https://www.naiveui.com/)
-- Icon 库：[xicon-ionicon5/antd](https://www.xicons.org/)
+- Icon 库：[@iconify/json](https://www.npmjs.com/package/@iconify/json) + [@iconify/vue](https://www.npmjs.com/package/@iconify/vue) + [unplugin-icons](https://github.com/antfu/unplugin-icons)
+
+> icon图标查找：[icones](https://icones.js.org/)
 
 ## 项目配置
 

@@ -1,7 +1,9 @@
+import type { RouteRecord } from "vue-router"
+
 /**
  * 判断根路由 Router
  * */
-export function isRootRouter(item) {
+export function isRootRouter(item: RouteRecord) {
   return item.meta?.isRoot === true && item.children?.length === 1
 }
 

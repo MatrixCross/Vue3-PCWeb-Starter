@@ -8,7 +8,6 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useSettingStore } from '@/store/modules/setting'
 defineProps<{
   collapsed: boolean

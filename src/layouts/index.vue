@@ -44,14 +44,6 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  NLayout,
-  NLayoutSider,
-  NLayoutContent,
-  NLayoutHeader,
-  NLayoutFooter,
-} from 'naive-ui'
-import { ref, computed, onMounted } from 'vue'
 import { useSettingStore } from '@/store/modules/setting'
 import NaiveProvider from '@/components/common/NaiveProvider/index.vue'
 import MenuView from './components/menu.vue'
@@ -98,7 +90,7 @@ onMounted(() => {
   .layout-content {
     flex: 1;
     position: relative;
-    margin-top: 64px;
+    margin-top: 60px;
 
     .header-space-placeholder {
       height: 64px;

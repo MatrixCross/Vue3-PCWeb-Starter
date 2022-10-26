@@ -5,15 +5,13 @@
     :collapsed="collapsed"
     :collapsed-width="64"
     :collapsed-icon-size="20"
-    :indent="24"
+    :indent="15"
     :default-value="defaultValue"
     @update:value="clickMenuItem"
   />
 </template>
 
 <script lang="ts" setup>
-import { NMenu } from 'naive-ui'
-import { useRouter, useRoute } from 'vue-router'
 import { generatorMenu } from '@/utils/router'
 import { useRouteStore } from '@/store/modules/route'
 const route = useRoute()

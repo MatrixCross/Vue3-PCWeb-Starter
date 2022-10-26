@@ -1,11 +1,6 @@
-import { RouteRecordRaw } from 'vue-router'
-import { renderIcon, renderSvgIcon } from '@/utils'
-import layout from '@/layouts/index.vue'
-import {
-  PersonOutline as PersonIcon,
-  HomeOutline as HomeIcon,
-  InformationCircleOutline as InfoIcon,
-} from '@/components/common/Icons'
+import type { RouteRecordRaw } from 'vue-router'
+import { iconifyRender } from '@/utils'
+import layout from '../../layouts/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,13 +9,13 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       isRoot: true,
-      icon: renderIcon(HomeIcon),
+      icon: iconifyRender('tabler:home'),
     },
     children: [
       {
         path: '',
         name: 'home-index',
-        component: () => import('@/views/example/homePage.vue'),
+        component: () => import('@/views/example/HomePage.vue'),
         meta: {
           title: '首页',
         },
@@ -33,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       title: '组件实例',
-      icon: renderSvgIcon('component'),
+      icon: iconifyRender('icon-park-outline:figma-component'),
     },
     children: [
       {
@@ -43,7 +38,16 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '组件缓存',
           keepAlive: true,
-          icon: renderSvgIcon('component'),
+          icon: iconifyRender('icon-park-outline:figma-component'),
+        },
+      },
+      {
+        path: 'un-keep-alive',
+        name: 'UnKeepAlive',
+        component: () => import('@/views/example/UnKeep.vue'),
+        meta: {
+          title: '组件不缓存',
+          icon: iconifyRender('icon-park-outline:figma-component'),
         },
       },
     ],
@@ -53,7 +57,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'about',
     component: layout,
     meta: {
-      icon: renderIcon(InfoIcon),
+      icon: iconifyRender('tabler:info-circle'),
       title: '关于',
     },
     children: [
@@ -63,7 +67,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/example/AboutProject.vue'),
         meta: {
           title: '关于项目',
-          icon: renderSvgIcon('project'),
+          icon: iconifyRender('tabler:stack-2'),
         },
       },
       {
@@ -72,7 +76,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/example/AboutAuthor.vue'),
         meta: {
           title: '关于作者',
-          icon: renderIcon(PersonIcon),
+          icon: iconifyRender('tabler:user-circle'),
         },
       },
     ],
@@ -83,7 +87,7 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       title: '作者博客',
-      icon: renderSvgIcon('blog'),
+      icon: iconifyRender('jam:blogger-circle'),
       isRoot: true,
     },
   },

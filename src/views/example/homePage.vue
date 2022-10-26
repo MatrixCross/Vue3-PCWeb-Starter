@@ -20,13 +20,17 @@
         <n-button size="large" type="primary" class="mr-8" @click="handlerBtn">
           关于项目
         </n-button>
-        <n-button size="large" @click="handlerBtn">作者Github</n-button>
+        <n-button size="large" @click="onOpenMyGithub" class="mr-8">
+          <template #icon><Icon icon="tabler:3d-cube-sphere" /></template>
+          作者Github
+        </n-button>
       </div>
     </div>
   </n-card>
 </template>
 
 <script lang="ts" setup>
+import { Icon } from '@iconify/vue'
 const handlerBtn = () => {
   window.$loading.error()
   window.$notification.error({
@@ -34,6 +38,9 @@ const handlerBtn = () => {
     content: '请耐心等待功能实现',
     duration: 3000,
   })
+}
+const onOpenMyGithub = () => {
+  window.open('https://github.com/Wyatex')
 }
 </script>
 

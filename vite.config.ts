@@ -1,40 +1,60 @@
+import { fileURLToPath, URL } from 'url'
 import { defineConfig, loadEnv } from 'vite'
+import unocss from 'unocss/vite'
 import vue from '@vitejs/plugin-vue'
-import eslintPlugin from 'vite-plugin-eslint'
-import { resolve } from 'path'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import AutoImport from 'unplugin-auto-import/vite'
 import { viteMockServe } from 'vite-plugin-mock'
-import windiCSS from 'vite-plugin-windicss'
-import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import { createSvgIconsPlugin as svgIconsPlugin } from 'vite-plugin-svg-icons'
+import components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
-export default defineConfig(async ({ mode }) => {
-  const root = process.cwd()
-  const env = loadEnv(mode, root)
+export default defineConfig(configEnv => {
+  const env = loadEnv(configEnv.mode, process.cwd())
   const apiUrl = env.VITE_API_URL
-  const proxy = {}
+  const proxy: any = {}
   proxy[apiUrl] = {
     target: env.VITE_PROXY,
     changeOrigin: true,
-    rewrite: path => path.replace(new RegExp(`^${apiUrl}`), ''),
+    rewrite: (path: string) => path.replace(new RegExp(`^${apiUrl}`), ''),
   }
 
   return {
     plugins: [
       vue(),
-      eslintPlugin({
-        include: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.tsx'],
+      vueJsx(),
+      unocss(),
+      icons({
+        compiler: 'vue3',
+        customCollections: {
+          custom: FileSystemIconLoader(
+            fileURLToPath(new URL('./src/assets/svg', import.meta.url))
+          ),
+        },
+      }),
+      AutoImport({
+        imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+        dts: true,
+        eslintrc: {
+          enabled: true,
+        },
+      }),
+      components({
+        types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
+        resolvers: [
+          NaiveUiResolver(),
+          IconsResolver({
+            customCollections: ['custom'],
+          }),
+        ],
       }),
       viteMockServe({
         mockPath: 'mock',
-        localEnabled: mode === 'development',
+        localEnabled: configEnv.mode === 'development',
       }),
-      svgIconsPlugin({
-        iconDirs: [resolve(__dirname, 'src/assets/icons')],
-        symbolId: 'icon-[dir]-[name]',
-      }),
-      windiCSS(),
-      vueSetupExtend(),
       createHtmlPlugin({
         minify: true,
         inject: {
@@ -44,11 +64,10 @@ export default defineConfig(async ({ mode }) => {
         },
       }),
     ],
-    base: env.VITE_BASE_URL, // 设置打包路径
+    base: env.VITE_BASE_URL,
     resolve: {
       alias: {
-        '@': resolve(__dirname, 'src'),
-        '/#/': resolve(__dirname, 'types/'),
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
     server: {
@@ -56,10 +75,8 @@ export default defineConfig(async ({ mode }) => {
       port: 8080,
       proxy,
     },
-    esbuild: {
-      jsxFactory: 'h',
-      jsxFragment: 'Fragment',
-      jsxInject: "import { h } from 'vue';",
+    preview: {
+      port: 8080,
     },
     css: {
       preprocessorOptions: {
@@ -70,8 +87,16 @@ export default defineConfig(async ({ mode }) => {
       },
     },
     build: {
-      brotliSize: false,
+      reportCompressedSize: false,
       sourcemap: false,
+      commonjsOptions: {
+        ignoreTryCatch: false,
+      },
+    },
+    test: {
+      transformMode: {
+        web: [/\.[jt]sx$/],
+      },
     },
   }
 })
