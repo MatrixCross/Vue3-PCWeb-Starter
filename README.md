@@ -41,7 +41,7 @@ yarn build
 ## 技术栈
 
 - 编程语言：[Typescript](https://www.typescriptlang.org/zh/) + [Javascript](https://www.javascript.com/)
-- 构建工具：[Vite2](https://vitejs.cn/)
+- 构建工具：[Vite3](https://vitejs.cn/)
 - 前端框架：[Vue3](https://v3.cn.vuejs.org/)
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
 - 状态管理：[pinia](https://pinia.esm.dev/)
@@ -54,7 +54,7 @@ yarn build
 - 组件库：[Naive-UI](https://www.naiveui.com/)
 - Icon 库：[@iconify/json](https://www.npmjs.com/package/@iconify/json) + [@iconify/vue](https://www.npmjs.com/package/@iconify/vue) + [unplugin-icons](https://github.com/antfu/unplugin-icons)
 
-> icon图标查找：[icones](https://icones.js.org/)
+> icon 图标查找：[icones](https://icones.js.org/)
 
 ## 项目配置
 
@@ -62,7 +62,7 @@ yarn build
 
 - src/settings/index.ts
 - .env(.development / .production)
-- vite.config.js
+- vite.config.ts
 
 ## UI 组件库
 
