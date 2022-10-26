@@ -3,8 +3,16 @@ import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createGuard } from './guard'
 
+type RouteGlob = {
+  [key in string]: {
+    default: Array<RouteRecordRaw>
+  }
+}
+
 // 从modules目录动态导入路由
-const modules = import.meta.globEager('./modules/**/*.ts')
+const modules = import.meta.glob('./modules/**/*.ts', {
+  eager: true,
+}) as RouteGlob
 const routeModuleList: RouteRecordRaw[] = []
 
 Object.keys(modules).forEach(key => {
