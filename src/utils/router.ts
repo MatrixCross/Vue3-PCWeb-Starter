@@ -1,4 +1,4 @@
-import type { RouteRecord } from "vue-router"
+import type { RouteRecord } from 'vue-router'
 
 /**
  * 判断根路由 Router

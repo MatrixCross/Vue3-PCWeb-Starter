@@ -1,7 +1,7 @@
 import { useRouteStoreOutOfSetup } from '@/store/modules/route'
 import { storage } from '@/utils/storage'
 import { isNavigationFailure } from 'vue-router'
-import type { Router } from 'vue-router' 
+import type { Router } from 'vue-router'
 
 export function createGuard(router: Router) {
   router.beforeEach(async (_to, _from, next) => {

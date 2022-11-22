@@ -6,5 +6,5 @@
   </n-card>
 </template>
 <script lang="ts" setup>
-let count = ref(0)
+const count = ref(0)
 </script>

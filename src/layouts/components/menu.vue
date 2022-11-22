@@ -19,7 +19,7 @@ const router = useRouter()
 const routeStore = useRouteStore()
 const defaultValue = route.name as string
 
-let menus = generatorMenu(routeStore.routes)
+const menus = generatorMenu(routeStore.routes)
 
 // 点击菜单
 function clickMenuItem(key: string) {

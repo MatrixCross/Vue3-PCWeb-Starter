@@ -29,6 +29,6 @@ import NaiveProviderContent from './NaiveProviderContent.vue'
 
 import { useSettingStore } from '@/store/modules/setting'
 const settingStore = useSettingStore()
-let theme = computed(() => (settingStore.darkTheme ? darkTheme : undefined))
+const theme = computed(() => (settingStore.darkTheme ? darkTheme : undefined))
 </script>
 <style scoped></style>

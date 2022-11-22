@@ -19,9 +19,9 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['*.vue'],
+      files: ['*.d.ts'],
       rules: {
-        'no-undef': 'off',
+        '@typescript-eslint/ban-types': 'off',
       },
     },
     {
@@ -54,7 +54,7 @@ module.exports = {
     'vue/multi-word-component-names': [
       'error',
       {
-        ignores: ['index'],
+        ignores: ['index', 'content', 'footer', 'header', 'logo', 'menu'],
       },
     ],
     '@typescript-eslint/no-empty-interface': [
