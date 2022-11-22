@@ -46,11 +46,7 @@ module.exports = {
     },
   },
   rules: {
-    'max-classes-per-file': 'off',
     'no-param-reassign': 'off',
-    'no-shadow': 'off',
-    'no-unused-vars': 'off',
-    'no-use-before-define': 'off',
     'vue/multi-word-component-names': [
       'error',
       {
