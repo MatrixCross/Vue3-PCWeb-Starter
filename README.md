@@ -66,4 +66,4 @@ yarn build
 
 ## UI 组件库
 
-本分支（master）使用的是 NaiveUI，后续会在其他分支使用其他的组件库，比如 AntDV 和 ElementUI，敬请期待！
+本分支（master）使用的是 NaiveUI，后续会在其他分支使用其他的组件库，比如 ArcoDesign 和 Tdesign，敬请期待！
