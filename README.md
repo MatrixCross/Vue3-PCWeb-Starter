@@ -6,7 +6,7 @@
 
 > 一套集成了 Vite 3.x + Vue 3.x + TypeScript + Vue Router + Pinia + Axios + ESlint 等套件的快速开发模板。
 
-[在线预览](https://wyatex.gitee.io/vue3-starter/)
+[在线预览](https://vue3-pc-web-starter.wyatex.online/)
 
 ## 快速开始
 
