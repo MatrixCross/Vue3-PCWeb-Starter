@@ -1,4 +1,4 @@
-import { useRouteStoreOutOfSetup } from '@/store/modules/route'
+import { useRouteStore } from '@/store/modules/route'
 import { storage } from '@/utils/storage'
 import { isNavigationFailure } from 'vue-router'
 import type { Router } from 'vue-router'
@@ -44,12 +44,11 @@ export function createGuard(router: Router) {
       console.error('failed navigation', failure)
     }
 
-    const routeStore = useRouteStoreOutOfSetup()
+    const routeStore = useRouteStore()
     // 在这里设置需要缓存的组件名称
     const keepAliveComponents = routeStore.keepAliveComponents
-    const currentComName: any = to.matched.find(
-      item => item.name == to.name
-    )?.name
+    const currentComName = to.matched.find(item => item.name == to.name)
+      ?.name as string | undefined
     if (
       currentComName &&
       !keepAliveComponents.includes(currentComName) &&

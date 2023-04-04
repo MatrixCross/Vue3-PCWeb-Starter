@@ -1,6 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
-import { iconifyRender } from '@/utils'
-import layout from '../../layouts/index.vue'
+import layout from '../../layouts/PcLayout.vue'
+import home from '~icons/tabler/home'
+import component from '~icons/icon-park-outline/figma-component'
+import info from '~icons/tabler/info-circle'
+import user from '~icons/tabler/user-circle'
+import blogger from '~icons/jam/blogger-circle'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -9,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       isRoot: true,
-      icon: iconifyRender('tabler:home'),
+      icon: () => h(home),
     },
     children: [
       {
@@ -28,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
     component: layout,
     meta: {
       title: '组件实例',
-      icon: iconifyRender('icon-park-outline:figma-component'),
+      icon: () => h(component),
     },
     children: [
       {
@@ -38,7 +42,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '组件缓存',
           keepAlive: true,
-          icon: iconifyRender('icon-park-outline:figma-component'),
+          icon: () => h(component),
         },
       },
       {
@@ -47,7 +51,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/example/UnKeep.vue'),
         meta: {
           title: '组件不缓存',
-          icon: iconifyRender('icon-park-outline:figma-component'),
+          icon: () => h(component),
         },
       },
     ],
@@ -57,37 +61,37 @@ const routes: Array<RouteRecordRaw> = [
     name: 'about',
     component: layout,
     meta: {
-      icon: iconifyRender('tabler:info-circle'),
+      icon: () => h(info),
       title: '关于',
     },
     children: [
       {
         path: 'project',
-        name: 'AboutProject',
-        component: () => import('@/views/example/AboutProject.vue'),
+        name: 'https://github.com/MatrixCross/Vue3-PCWeb-Starter',
+        component: layout,
         meta: {
           title: '关于项目',
-          icon: iconifyRender('tabler:stack-2'),
+          icon: () => h(info),
         },
       },
       {
         path: 'author',
-        name: 'AboutAuthor',
-        component: () => import('@/views/example/AboutAuthor.vue'),
+        name: 'https://github.com/Wyatex',
+        component: layout,
         meta: {
           title: '关于作者',
-          icon: iconifyRender('tabler:user-circle'),
+          icon: () => h(user),
         },
       },
     ],
   },
   {
     path: '/blog',
-    name: 'https://wyatex.gitee.io',
+    name: 'https://wyatex.work',
     component: layout,
     meta: {
       title: '作者博客',
-      icon: iconifyRender('jam:blogger-circle'),
+      icon: () => h(blogger),
       isRoot: true,
     },
   },

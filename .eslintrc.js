@@ -17,27 +17,10 @@ module.exports = {
     '@vue/typescript/recommended',
     './.eslintrc-auto-import.json',
   ],
-  overrides: [
-    {
-      files: ['*.d.ts'],
-      rules: {
-        '@typescript-eslint/ban-types': 'off',
-      },
-    },
-    {
-      files: ['*.html'],
-      rules: {
-        'vue/comment-directive': 'off',
-      },
-    },
-  ],
   settings: {
     'import/resolver': {
       alias: {
-        map: [
-          ['~', '.'],
-          ['@', './src'],
-        ],
+        map: [['@', './src']],
         extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'],
       },
       node: {
@@ -46,29 +29,6 @@ module.exports = {
     },
   },
   rules: {
-    'no-param-reassign': 'off',
-    'vue/multi-word-component-names': [
-      'error',
-      {
-        ignores: ['index', 'content', 'footer', 'header', 'logo', 'menu'],
-      },
-    ],
-    '@typescript-eslint/no-empty-interface': [
-      'error',
-      {
-        allowSingleExtends: true,
-      },
-    ],
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-shadow': 'error',
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      { ignoreRestSiblings: true, varsIgnorePattern: '^_' },
-    ],
-    '@typescript-eslint/no-use-before-define': [
-      'error',
-      { classes: true, functions: false, typedefs: false },
-    ],
+    'prettier/prettier': 0,
   },
 }

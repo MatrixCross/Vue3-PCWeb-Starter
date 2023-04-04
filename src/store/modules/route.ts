@@ -1,11 +1,11 @@
 import { nextTick } from 'vue'
 import { defineStore } from 'pinia'
-import { store } from '@/store'
 import { constantRoute } from '@/router'
+import { RouteRecordRaw } from 'vue-router'
 
 export interface IRouteState {
   keepAliveComponents: string[]
-  routes: any[]
+  routes: RouteRecordRaw[]
   reloadFlag: boolean
 }
 
@@ -41,7 +41,3 @@ export const useRouteStore = defineStore({
     },
   },
 })
-
-export function useRouteStoreOutOfSetup() {
-  return useRouteStore(store)
-}

@@ -2,35 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/resource/loading.css" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/loading.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Vite + Vue + TS</title>
   </head>
   <body>
     <div id="app">
       <div class="loading-container">
         <div class="loading-logo">
-          <img src="/src/assets/logo.png" />
+          <img
+            style="width: 10vw; height: 10vw"
+            src="/src/assets/svg/vue.svg"
+          />
         </div>
-        <div class="loading-spin-container">
-          <div class="loading-spin">
-            <div class="left-0 top-0 loading-spin-item"></div>
-            <div
-              class="left-0 bottom-0 loading-spin-item loading-delay-500"
-            ></div>
-            <div
-              class="right-0 top-0 loading-spin-item loading-delay-1000"
-            ></div>
-            <div
-              class="right-0 bottom-0 loading-spin-item loading-delay-1500"
-            ></div>
-          </div>
-        </div>
-        <h2 class="loading-title"><%= appTitle %></h2>
-        <script>
-          document.documentElement.style.cssText = '--primary-color: #41b883'
-        </script>
+        <h2 class="loading-title">Vite + Vue + TS</h2>
+        <img src="/loading.svg" />
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>

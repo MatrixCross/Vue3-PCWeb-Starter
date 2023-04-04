@@ -1,4 +1,4 @@
-import type { App } from 'vue'
+import type { Plugin } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createGuard } from './guard'
@@ -30,11 +30,12 @@ const router = createRouter({
   routes: routeModuleList,
 })
 
-// 挂载路由和创建路由守卫
-export function setupRouter(app: App<Element>) {
-  app.use(router)
-  createGuard(router)
-}
+export const routerPlugin = {
+  install(app) {
+    app.use(router)
+    createGuard(router)
+  },
+} as Plugin
 
 // 也可以使用导出的路由实例进行挂载
 export default router

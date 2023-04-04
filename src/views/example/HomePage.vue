@@ -5,8 +5,12 @@
     content-style="display: flex; flex-direction: column; justify-content:center; align-item: center;"
   >
     <div class="flex flex-col items-center justify-center">
-      <div class="logo">
-        <img src="@/assets/logo.png" alt="" />
+      <div class="flex">
+        <img src="/vite.svg" class="logo transition w-200px h-200px" />
+        <img
+          src="@/assets/svg/vue.svg"
+          class="logo vue transition w-200px h-200px ml-50px"
+        />
       </div>
       <n-gradient-text type="success" :size="64">
         Vue3 Starter
@@ -44,4 +48,11 @@ const onOpenMyGithub = () => {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style scoped>
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+</style>

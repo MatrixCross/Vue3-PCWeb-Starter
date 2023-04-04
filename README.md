@@ -21,7 +21,7 @@ git clone https://github.com/Wyatex/Vue3-starter.git
 ### 安装依赖
 
 ```sh
-yarn
+pnpm i
 ```
 
 ### 启动 dev 服务器和构建
@@ -29,13 +29,13 @@ yarn
 启动 dev 服务器
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 构建，默认打包到'./dist'
 
 ```sh
-yarn build
+pnpm build
 ```
 
 ## 技术栈

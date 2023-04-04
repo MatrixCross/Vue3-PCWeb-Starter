@@ -1,3 +1,4 @@
+/* eslint-disable */
 const toString = Object.prototype.toString
 
 /**
