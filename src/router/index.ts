@@ -1,6 +1,6 @@
 import type { Plugin } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { createGuard } from './guard'
 
 type RouteGlob = {
@@ -26,7 +26,7 @@ export const constantRoute: RouteRecordRaw[] = [...routeModuleList]
 
 // 创建路由实例
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.VITE_BASE_URL as string),
+  history: createWebHistory(import.meta.env.VITE_BASE_URL as string),
   routes: routeModuleList,
 })
 
