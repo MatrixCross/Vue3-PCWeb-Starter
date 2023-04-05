@@ -45,14 +45,14 @@ pnpm build
 - 前端框架：[Vue3](https://v3.cn.vuejs.org/)
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
 - 状态管理：[pinia](https://pinia.esm.dev/)
-- CSS 预处理：[Less](https://less.bootcss.com/)
+- CSS 预处理：[Sass](https://sass-lang.com/)
 - CSS 引擎：[UnoCSS](https://github.com/unocss/unocss)
 - HTTP 工具：[Axios](https://axios-http.com/)
 - JSX 处理：[@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
-- 代码规范：[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)
-- 单元测试：[vitest](https://vitest.dev/) + [vue-test-utils](https://vue-test-utils.vuejs.org/zh/)
+- 代码规范：[ESLint](https://eslint.org/)
+- 代码格式化：[Prettier](https://prettier.io/)
 - 组件库：[Naive-UI](https://www.naiveui.com/)
-- Icon 库：[@iconify/json](https://www.npmjs.com/package/@iconify/json) + [@iconify/vue](https://www.npmjs.com/package/@iconify/vue) + [unplugin-icons](https://github.com/antfu/unplugin-icons)
+- Icon 库：[@iconify/json](https://www.npmjs.com/package/@iconify/json) + [@iconify/vue](https://www.npmjs.com/package/@iconify/vue) + [unplugin-icons](https://github.com/antfu/unplugin-icons) + [unocss-icon](https://unocss.dev/presets/icons)
 
 > icon 图标查找：[icones](https://icones.js.org/)
 
@@ -63,6 +63,47 @@ pnpm build
 - src/settings/index.ts
 - .env(.development / .production)
 - vite.config.ts
+
+## 图标使用
+如果是静态的icon，可以使用unplugin-icons或者unocss
+```html
+<!-- unplugin-icons写法 -->
+<i-ph-anchor-simple-thin />
+<!-- unocss写法 -->
+<div class="i-ph-anchor-simple-thin" />
+<button class="i-carbon-sun dark:i-carbon-moon" />
+```
+
+如果是在js/ts引入icon：
+```js
+import IconAccessibility from '~icons/carbon/accessibility'
+import IconAccountBox from '~icons/mdi/account-box'
+// 可以给jsx / tsx用，项目已经安装jsx插件可以之间使用
+
+const IconComponent = () => (
+  <div>
+    <IconAccessibility />
+    <IconAccountBox style={{ fontSize: '2em', color: 'red' }}/>
+  </div>
+)
+```
+
+动态icon，可以根据一个字符串名字，运行时获取icon数据：
+```
+<template>
+  <Icon :icon="iconName" />
+</template>
+<script setup>
+const iconName = ref('')
+// 省略.......
+iconName.value = getIconName()
+</script>
+```
+
+上面的组件都可以用unocss快速设置样式：`class="w-10px h-10px text-red"`，icon的宽高10px，主色为红色
+
+## 打包
+vite3之后，生产和开发打包都统一使用esbuild，无需安装terser进行压缩，速度更快，如果生产代码需要去除console、debugger等代码，直接配置esbuild即可。
 
 ## UI 组件库
 
