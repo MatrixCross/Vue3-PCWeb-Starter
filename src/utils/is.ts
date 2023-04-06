@@ -1,4 +1,3 @@
-/* eslint-disable */
 const toString = Object.prototype.toString
 
 /**
@@ -29,8 +28,8 @@ export const isUnDef = <T = unknown>(val?: T): val is T => {
 /**
  * @description: 是否为对象
  */
-export const isObject = (val: any): val is Record<any, any> => {
-  return val !== null && is(val, 'Object')
+export const isObject = <T = Record<string, any>>(val: unknown): val is T => {
+  return is(val, 'Object')
 }
 
 /**
@@ -50,14 +49,14 @@ export function isNumber(val: unknown): val is number {
 /**
  * @description:  是否为AsyncFunction
  */
-export function isAsyncFunction<T = any>(val: unknown): val is Promise<T> {
+export function isAsyncFunction<T = unknown,U = unknown>(val: unknown): val is (...args: U[]) => Promise<T> {
   return is(val, 'AsyncFunction')
 }
 
 /**
  * @description:  是否为promise
  */
-export function isPromise<T = any>(val: unknown): val is Promise<T> {
+export function isPromise<T = unknown>(val: unknown): val is Promise<T> {
   return (
     is(val, 'Promise') &&
     isObject(val) &&
@@ -83,8 +82,16 @@ export function isBoolean(val: unknown): val is boolean {
 /**
  * @description:  是否为数组
  */
-export function isArray(val: any): val is Array<any> {
-  return val && Array.isArray(val)
+export function isArray<T = unknown>(val: unknown): val is Array<T> {
+  return Array.isArray(val)
+}
+
+export function isNull(val: unknown): val is null {
+  return val === null
+}
+
+export function isNullOrUnDef(val: unknown): val is null | undefined {
+  return isUnDef(val) || isNull(val)
 }
 
 /**
@@ -97,7 +104,7 @@ export const isClient = () => {
 /**
  * @description: 是否为浏览器
  */
-export const isWindow = (val: any): val is Window => {
+export const isWindow = (val: unknown): val is Window => {
   return typeof window !== 'undefined' && is(val, 'Window')
 }
 
@@ -110,16 +117,4 @@ export const isServer = typeof window === 'undefined'
 // 是否为图片节点
 export function isImageDom(o: Element) {
   return o && ['IMAGE', 'IMG'].includes(o.tagName)
-}
-
-export function isNull(val: unknown): val is null {
-  return val === null
-}
-
-export function isNullAndUnDef(val: unknown): val is null | undefined {
-  return isUnDef(val) && isNull(val)
-}
-
-export function isNullOrUnDef(val: unknown): val is null | undefined {
-  return isUnDef(val) || isNull(val)
 }
