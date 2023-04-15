@@ -14,6 +14,8 @@ export default defineConfig(configEnv => {
   const env = loadEnv(configEnv.mode, './')
   return {
     server: {
+      port: 1420,
+      strictPort: true,
       proxy: {
         [env.VITE_API_URL]: {
           target: env.VITE_PROXY,

@@ -38,6 +38,12 @@ pnpm dev
 pnpm build
 ```
 
+### 打包到二进制可执行文件
+
+```sh
+pnpm tauri build
+```
+
 ## 技术栈
 
 - 编程语言：[Typescript](https://www.typescriptlang.org/zh/) + [Javascript](https://www.javascript.com/)
