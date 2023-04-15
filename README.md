@@ -38,6 +38,16 @@ pnpm dev
 pnpm build
 ```
 
+### 打包成docker镜像
+一定要先build，看到当前项目目录生成dist文件夹，再执行docker镜像打包
+
+按需修改default.conf文件
+```sh
+docker build -t vue3-pcweb-starter .
+```
+
+vue3-pcweb-starter换成你的image名
+
 ## 技术栈
 
 - 编程语言：[Typescript](https://www.typescriptlang.org/zh/) + [Javascript](https://www.javascript.com/)
