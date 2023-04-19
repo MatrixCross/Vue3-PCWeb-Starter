@@ -13,8 +13,8 @@
         @collapse="collapsed = true"
         @expand="collapsed = false"
       >
-        <logo-view :collapsed="collapsed" />
-        <menu-view :collapsed="collapsed" :inverted="inverted"></menu-view>
+        <layout-logo :collapsed="collapsed" />
+        <layout-menu :collapsed="collapsed" :inverted="inverted"></layout-menu>
       </n-layout-sider>
       <n-layout
         :inverted="inverted"
@@ -22,7 +22,7 @@
         content-style="display: flex;flex-direction: column;"
       >
         <n-layout-header :inverted="inverted" position="absolute">
-          <header-view v-model:collapsed="collapsed" :inverted="inverted" />
+          <layout-header v-model:collapsed="collapsed" :inverted="inverted" />
         </n-layout-header>
         <n-layout-content
           class="flex flex-1 mt-60px relative"
@@ -30,14 +30,9 @@
           :class="{ 'bg-hex-f5f7f9': inverted === false }"
         >
           <div class="flex-1 p-16px">
-            <content-view />
+            <layout-content />
           </div>
-          <n-layout-footer
-            class="flex items-center justify-center min-h-40px"
-            :class="{ 'bg-white': inverted === false }"
-          >
-            <div class="footer">Copyright ©2023 Vue3 Starter</div>
-          </n-layout-footer>
+          <layout-footer />
         </n-layout-content>
       </n-layout>
     </n-layout>
@@ -45,10 +40,11 @@
 </template>
 
 <script lang="ts" setup>
-import MenuView from './components/LayoutMenu.vue'
-import HeaderView from './components/LayoutHeader.vue'
-import ContentView from './components/LayoutContent.vue'
-import LogoView from './components/LayoutLogo.vue'
+import LayoutMenu from './components/LayoutMenu.vue'
+import LayoutHeader from './components/LayoutHeader.vue'
+import LayoutContent from './components/LayoutContent.vue'
+import LayoutLogo from './components/LayoutLogo.vue'
+import LayoutFooter from './components/LayoutFooter.vue'
 
 const settingStore = useSettingStore()
 const collapsed = ref(false)
