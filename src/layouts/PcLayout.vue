@@ -45,14 +45,12 @@
 </template>
 
 <script lang="ts" setup>
-import { useSettingStore } from '@/store/modules/setting'
 import MenuView from './components/LayoutMenu.vue'
 import HeaderView from './components/LayoutHeader.vue'
 import ContentView from './components/LayoutContent.vue'
 import LogoView from './components/LayoutLogo.vue'
 
 const settingStore = useSettingStore()
-
 const collapsed = ref(false)
 const inverted = computed(() => settingStore.darkTheme)
 

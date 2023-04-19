@@ -65,7 +65,9 @@ pnpm build
 - vite.config.ts
 
 ## 图标使用
-如果是静态的icon，可以使用unplugin-icons或者unocss
+
+如果是静态的 icon，可以使用 unplugin-icons 或者 unocss
+
 ```html
 <!-- unplugin-icons写法 -->
 <i-ph-anchor-simple-thin />
@@ -74,7 +76,8 @@ pnpm build
 <button class="i-carbon-sun dark:i-carbon-moon" />
 ```
 
-如果是在js/ts引入icon：
+如果是在 js/ts 引入 icon：
+
 ```js
 import IconAccessibility from '~icons/carbon/accessibility'
 import IconAccountBox from '~icons/mdi/account-box'
@@ -83,12 +86,13 @@ import IconAccountBox from '~icons/mdi/account-box'
 const IconComponent = () => (
   <div>
     <IconAccessibility />
-    <IconAccountBox style={{ fontSize: '2em', color: 'red' }}/>
+    <IconAccountBox style={{ fontSize: '2em', color: 'red' }} />
   </div>
 )
 ```
 
-动态icon，可以根据一个字符串名字，运行时获取icon数据：
+动态 icon，可以根据一个字符串名字，运行时获取 icon 数据：
+
 ```
 <template>
   <Icon :icon="iconName" />
@@ -100,10 +104,11 @@ iconName.value = getIconName()
 </script>
 ```
 
-上面的组件都可以用unocss快速设置样式：`class="w-10px h-10px text-red"`，icon的宽高10px，主色为红色
+上面的组件都可以用 unocss 快速设置样式：`class="w-10px h-10px text-red"`，icon 的宽高 10px，主色为红色
 
 ## 打包
-vite3之后，生产和开发打包都统一使用esbuild，无需安装terser进行压缩，速度更快，如果生产代码需要去除console、debugger等代码，直接配置esbuild即可。
+
+vite3 之后，生产和开发打包都统一使用 esbuild，无需安装 terser 进行压缩，速度更快，如果生产代码需要去除 console、debugger 等代码，直接配置 esbuild 即可。
 
 ## UI 组件库
 

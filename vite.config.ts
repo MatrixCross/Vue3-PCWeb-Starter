@@ -44,6 +44,7 @@ export default defineConfig(configEnv => {
       autoImport({
         dts: './typings/auto-imports.d.ts',
         imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+        dirs: ['./src/store/modules/**', './src/hooks/common/**'],
         eslintrc: {
           enabled: true,
         },

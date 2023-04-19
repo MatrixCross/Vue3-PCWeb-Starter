@@ -13,7 +13,6 @@
 
 <script lang="ts" setup>
 import { generatorMenu } from '@/utils/router'
-import { useRouteStore } from '@/store/modules/route'
 const route = useRoute()
 const router = useRouter()
 const routeStore = useRouteStore()

@@ -78,10 +78,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useSettingStore } from '@/store/modules/setting'
-import { useRouteStore } from '@/store/modules/route'
-import useLoading from '@/hooks/common/useLoading'
-
 defineProps<{
   collapsed: boolean
   inverted: boolean

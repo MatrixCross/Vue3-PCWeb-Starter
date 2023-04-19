@@ -13,8 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useRouteStore } from '@/store/modules/route'
-import { useSettingStore } from '@/store/modules/setting'
 const routeStore = useRouteStore()
 const { animationType } = useSettingStore()
 const keepAliveComponents = computed(() => routeStore.keepAliveComponents)
