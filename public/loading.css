@@ -1,4 +1,4 @@
-.loading-container {
+.before-create-app-loading-container {
   position: fixed;
   left: 0;
   top: 0;
@@ -10,12 +10,22 @@
   height: 100%;
 }
 
-.loading-logo {
+.before-create-app-loading-logo {
   margin-bottom: 10px;
 }
 
-.loading-title {
+.before-create-app-loading-logo:hover {
+  filter: drop-shadow(0 0 2em #42b883aa) drop-shadow(0 0 4em #42b883aa);
+}
+
+.before-create-app-loading-title {
   font-size: 28px;
   font-weight: 500;
   color: #646464;
+}
+
+.before-create-app-loading-svg {
+  --colorA: #42b883aa;
+  filter: drop-shadow(0 0 2px var(--colorA)) drop-shadow(0 0 5px var(--colorA))
+    drop-shadow(0 0 10px var(--colorA)) drop-shadow(0 0 15px var(--colorA));
 }
