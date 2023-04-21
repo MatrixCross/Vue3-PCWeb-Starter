@@ -41,13 +41,13 @@ pnpm build
 ## 技术栈
 
 - 编程语言：[Typescript](https://www.typescriptlang.org/zh/) + [Javascript](https://www.javascript.com/)
-- 构建工具：[Vite3](https://vitejs.cn/)
+- 构建工具：[Vite4](https://vitejs.cn/)
 - 前端框架：[Vue3](https://v3.cn.vuejs.org/)
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
 - 状态管理：[pinia](https://pinia.esm.dev/)
 - CSS 预处理：[Sass](https://sass-lang.com/)
 - CSS 引擎：[UnoCSS](https://github.com/unocss/unocss)
-- HTTP 工具：[Axios](https://axios-http.com/)
+- HTTP 工具：[Axios](https://axios-http.com/) + [Alova](https://alova.js.org/zh-CN/)
 - JSX 处理：[@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
 - 代码规范：[ESLint](https://eslint.org/)
 - 代码格式化：[Prettier](https://prettier.io/)
