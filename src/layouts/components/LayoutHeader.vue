@@ -5,7 +5,7 @@
     <div class="flex items-center">
       <!-- 菜单收起 -->
       <div
-        class="ml-1 flex-center w-64px h-64px cursor-pointer transition"
+        class="ml-1 flex-center ml-24px h-64px cursor-pointer transition"
         @click="() => $emit('update:collapsed', !collapsed)"
       >
         <n-icon v-if="collapsed" size="20">
@@ -17,7 +17,7 @@
       </div>
       <!-- 刷新 -->
       <div
-        class="flex-center w-64px h-64px cursor-pointer transition"
+        class="flex-center ml-24px h-64px cursor-pointer transition"
         @click="reloadPage"
       >
         <n-icon size="20">
@@ -26,7 +26,7 @@
       </div>
       <!--切换全屏-->
       <div
-        class="flex-center w-64px h-64px cursor-pointer transition"
+        class="flex-center ml-24px h-64px cursor-pointer transition"
         @click="toggleFullScreen"
       >
         <n-tooltip placement="bottom">
@@ -43,7 +43,7 @@
     <div class="flex items-center">
       <!-- 深色开关 -->
       <div
-        class="flex-center w-64px h-64px cursor-pointer transition"
+        class="flex-center mr-24px h-64px cursor-pointer transition"
         @click="darkThemeSwitch"
       >
         <div class="flex items-center h-full">
@@ -62,7 +62,7 @@
       </div>
       <!-- github -->
       <div
-        class="flex-center w-64px h-64px cursor-pointer transition"
+        class="flex-center mr-24px h-64px cursor-pointer transition"
         @click="openGithub"
       >
         <n-tooltip placement="bottom">
