@@ -1,4 +1,3 @@
-
 import { apiBaseUrl, requestTimeout } from '@/settings/index'
 
 // axios请求库
@@ -6,9 +5,9 @@ import Axios from 'axios'
 // import { storage } from '@/utils/storage'
 
 // alova请求库
-import { createAlova } from 'alova';
-import GlobalFetch from 'alova/GlobalFetch';
-import VueHook from 'alova/vue';
+import { createAlova } from 'alova'
+import GlobalFetch from 'alova/GlobalFetch'
+import VueHook from 'alova/vue'
 
 // axios请求实例
 const axiosInstance = Axios.create({
@@ -67,13 +66,13 @@ const alovaInstance = createAlova({
 
   // 响应拦截器，也与axios类似
   async responsed(response) {
-      const json = await response.json();
-      if (json.code !== 200) {
-        // 这边抛出错误时，将会进入请求失败拦截器内
-        throw new Error(json.message);
-      }
-      return json.data;
-    },
-});
+    const json = await response.json()
+    if (json.code !== 200) {
+      // 这边抛出错误时，将会进入请求失败拦截器内
+      throw new Error(json.message)
+    }
+    return json.data
+  },
+})
 
 export { axiosInstance as axios, alovaInstance as useRequest }
