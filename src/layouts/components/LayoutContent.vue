@@ -1,6 +1,6 @@
 <template>
   <router-view v-slot="{ Component, route }">
-    <transition :name="animationType" mode="out-in" appear>
+    <transition :name="settingStore.animationType" mode="out-in" appear>
       <keep-alive :include="keepAliveComponents">
         <component
           v-if="routeStore.reloadFlag"
@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 const routeStore = useRouteStore()
-const { animationType } = useSettingStore()
+const settingStore = useSettingStore()
 const keepAliveComponents = computed(() => routeStore.keepAliveComponents)
 </script>
 
