@@ -10,13 +10,13 @@
 
 ## 快速开始
 
-### 下载项目
-
-使用 git 进行克隆
+### 使用cli创建项目
 
 ```sh
-git clone https://github.com/Wyatex/Vue3-starter.git
+pnpm create matrix-starter
 ```
+
+选择 vue3 - PCWeb-NaiveUI
 
 ### 安装依赖
 
