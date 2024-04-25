@@ -2,7 +2,11 @@ import { defineConfig, presetIcons, presetUno } from 'unocss'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
 export default defineConfig({
-  exclude: ['node_modules', '.git', 'dist', 'mock', './stats.html'],
+  content: {
+    pipeline: {
+      exclude: ['node_modules', '.git', 'dist', 'mock', './stats.html'],
+    },
+  },
   presets: [
     presetUno({ dark: 'class' }),
     presetIcons({
