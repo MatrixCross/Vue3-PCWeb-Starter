@@ -13,5 +13,5 @@ export const apiBaseUrl = import.meta.env.VITE_API_URL
 // 请求超时时长
 export const requestTimeout = 5000
 
-//路由动画类型
+// 路由动画类型
 export const animationType = 'zoom-fade'

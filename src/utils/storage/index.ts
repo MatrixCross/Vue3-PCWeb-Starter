@@ -5,12 +5,12 @@ const DEFAULT_CACHE_TIME = defaultCacheTime
 /**
  * 创建本地缓存对象
  * @param {string=} prefixKey -
- * @param {Object} [storage=localStorage] - sessionStorage | localStorage
+ * @param {object} [storage] - sessionStorage | localStorage
  */
-export const createStorage = ({
+export function createStorage({
   prefixKey = '',
   storage = localStorage,
-} = {}) => {
+} = {}) {
   /**
    * 本地缓存类
    * @class Storage
@@ -32,7 +32,7 @@ export const createStorage = ({
     set(
       key: string,
       value: unknown,
-      expire: number | null = DEFAULT_CACHE_TIME
+      expire: number | null = DEFAULT_CACHE_TIME,
     ) {
       const stringData = JSON.stringify({
         value,
@@ -53,11 +53,12 @@ export const createStorage = ({
           const data = JSON.parse(item)
           const { value, expire } = data
           // 在有效期内直接返回
-          if (expire === null || expire >= Date.now()) {
+          if (expire === null || expire >= Date.now())
             return value
-          }
+
           this.remove(this.getKey(key))
-        } catch (e) {
+        }
+        catch (e) {
           return def
         }
       }
@@ -91,7 +92,7 @@ export const createStorage = ({
     setCookie(
       name: string,
       value: unknown,
-      expire: number | null = DEFAULT_CACHE_TIME
+      expire: number | null = DEFAULT_CACHE_TIME,
     ) {
       document.cookie = `${this.getKey(name)}=${value}; Max-Age=${expire}`
     }
@@ -104,9 +105,8 @@ export const createStorage = ({
       const cookieArr = document.cookie.split('; ')
       for (let i = 0, length = cookieArr.length; i < length; i++) {
         const kv = cookieArr[i].split('=')
-        if (kv[0] === this.getKey(name)) {
+        if (kv[0] === this.getKey(name))
           return kv[1]
-        }
       }
       return ''
     }
@@ -125,9 +125,8 @@ export const createStorage = ({
     clearCookie(): void {
       const keys = document.cookie.match(/[^ =;]+(?==)/g)
       if (keys) {
-        for (let i = keys.length; i--; ) {
-          document.cookie = keys[i] + '=0;expire=' + new Date(0).toUTCString()
-        }
+        for (let i = keys.length; i--;)
+          document.cookie = `${keys[i]}=0;expire=${new Date(0).toUTCString()}`
       }
     }
   }

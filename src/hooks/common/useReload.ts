@@ -17,7 +17,8 @@ export function useReload() {
       setTimeout(() => {
         setTrue()
       }, duration)
-    } else {
+    }
+    else {
       setTrue()
     }
   }

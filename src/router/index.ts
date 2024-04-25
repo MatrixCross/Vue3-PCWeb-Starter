@@ -15,7 +15,7 @@ const modules = import.meta.glob('./modules/**/*.ts', {
 }) as RouteGlob
 const routeModuleList: RouteRecordRaw[] = []
 
-Object.keys(modules).forEach(key => {
+Object.keys(modules).forEach((key) => {
   const module = modules[key].default || {}
   const modList = Array.isArray(module) ? [...module] : [module]
   routeModuleList.push(...modList)

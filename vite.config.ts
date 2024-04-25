@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from 'url'
+import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 import unocss from 'unocss/vite'
 import vue from '@vitejs/plugin-vue'
@@ -10,7 +10,7 @@ import icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
-export default defineConfig(configEnv => {
+export default defineConfig((configEnv) => {
   const env = loadEnv(configEnv.mode, './')
   return {
     server: {
@@ -37,7 +37,7 @@ export default defineConfig(configEnv => {
         compiler: 'vue3',
         customCollections: {
           custom: FileSystemIconLoader(
-            fileURLToPath(new URL('./src/assets/svg', import.meta.url))
+            fileURLToPath(new URL('./src/assets/svg', import.meta.url)),
           ),
         },
       }),

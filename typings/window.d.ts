@@ -1,6 +1,6 @@
 import type {
-  LoadingBarProviderInst,
   DialogProviderInst,
+  LoadingBarProviderInst,
   MessageProviderInst,
   NotificationProviderInst,
 } from 'naive-ui'

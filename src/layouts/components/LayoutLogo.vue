@@ -1,17 +1,17 @@
-<template>
-  <div class="logo">
-    <transition name="fade" mode="out-in" appear>
-      <img v-if="collapsed" src="@/assets/svg/vue.svg" />
-      <span v-else class="text-xl font-bold">Vue3 Starter</span>
-    </transition>
-  </div>
-</template>
-
 <script lang="ts" setup>
 defineProps<{
   collapsed: boolean
 }>()
 </script>
+
+<template>
+  <div class="logo">
+    <transition name="fade" mode="out-in" appear>
+      <img v-if="collapsed" src="@/assets/svg/vue.svg">
+      <span v-else class="text-xl font-bold">Vue3 Starter</span>
+    </transition>
+  </div>
+</template>
 
 <style scoped>
 .logo {

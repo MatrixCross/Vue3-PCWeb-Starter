@@ -1,4 +1,4 @@
-import { defineConfig, presetUno, presetIcons } from 'unocss'
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
 export default defineConfig({
@@ -8,8 +8,7 @@ export default defineConfig({
     presetIcons({
       collections: {
         custom: FileSystemIconLoader('./src/assets/svg', svg =>
-          svg.replace(/#fff/, 'currentColor')
-        ),
+          svg.replace(/#fff/, 'currentColor')),
       },
     }),
   ],

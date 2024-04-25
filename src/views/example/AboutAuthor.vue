@@ -1,10 +1,3 @@
-<template>
-  <div>
-    <h1>{{ msg }}</h1>
-    <n-skeleton text :repeat="10" /> <n-skeleton text style="width: 60%" />
-  </div>
-</template>
-
 <script lang="ts" setup>
 defineProps({
   msg: {
@@ -13,6 +6,13 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <div>
+    <h1>{{ msg }}</h1>
+    <n-skeleton text :repeat="10" /> <n-skeleton text style="width: 60%" />
+  </div>
+</template>
 
 <style scoped>
 a {
