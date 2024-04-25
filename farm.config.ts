@@ -1,43 +1,28 @@
-import { URL, fileURLToPath } from 'node:url'
-import { defineConfig, loadEnv } from 'vite'
-import unocss from 'unocss/vite'
+import path from 'node:path'
+import process from 'node:process'
+import { defineConfig, loadEnv } from '@farmfe/core'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import icons from 'unplugin-icons/vite'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+import postcss from '@farmfe/js-plugin-postcss'
 
-export default defineConfig((configEnv) => {
-  const env = loadEnv(configEnv.mode, './')
+export default defineConfig(({ mode }) => {
+  const [env] = loadEnv(mode, process.cwd())
   return {
-    server: {
-      proxy: {
-        [env.VITE_API_URL]: {
-          target: env.VITE_PROXY,
-          changeOrigin: true,
-          rewrite: (path: string) =>
-            path.replace(new RegExp(`^${env.VITE_API_URL}`), ''),
-        },
-      },
-    },
-    resolve: {
-      alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url)),
-      },
-    },
-    plugins: [
+    vitePlugins: [
       vue(),
       vueJsx(),
-      unocss(),
       icons({
         autoInstall: true,
         compiler: 'vue3',
         customCollections: {
           custom: FileSystemIconLoader(
-            fileURLToPath(new URL('./src/assets/svg', import.meta.url)),
+            path.join(process.cwd(), 'src/assets/svg'),
           ),
         },
       }),
@@ -73,5 +58,24 @@ export default defineConfig((configEnv) => {
         ],
       }),
     ],
+    plugins: ['@farmfe/plugin-sass', postcss()],
+    server: {
+      proxy: {
+        [env.VITE_API_URL]: {
+          target: env.VITE_PROXY,
+          changeOrigin: true,
+          rewrite: (path: string) =>
+            path.replace(new RegExp(`^${env.VITE_API_URL}`), ''),
+        },
+      },
+    },
+    compilation: {
+      external: ['uno.css'],
+      resolve: {
+        alias: {
+          '@': path.join(process.cwd(), 'src'),
+        },
+      },
+    },
   }
 })

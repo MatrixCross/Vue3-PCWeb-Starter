@@ -2,19 +2,19 @@ import type { RouteRecordRaw } from 'vue-router'
 
 /**
  * 判断根路由 Router
- * */
+ */
 export function isRootRouter(item: RouteRecordRaw) {
   return item.meta?.isRoot === true && item.children?.length === 1
 }
 
 /**
  * 排除Router
- * */
+ */
 export function filterRouter(routerMap: Array<RouteRecordRaw>) {
-  return routerMap.filter(item => {
+  return routerMap.filter((item) => {
     return (
-      (item.meta?.hidden || false) != true &&
-      !['/:path(.*)*', '/', '/redirect'].includes(item.path)
+      (item.meta?.hidden || false) !== true
+      && !['/:path(.*)*', '/', '/redirect'].includes(item.path)
     )
   })
 }
@@ -23,7 +23,7 @@ export function filterRouter(routerMap: Array<RouteRecordRaw>) {
  * 递归组装菜单格式
  */
 export function generatorMenu(routerMap: Array<RouteRecordRaw>) {
-  return filterRouter(routerMap).map(item => {
+  return filterRouter(routerMap).map((item) => {
     const isRoot = isRootRouter(item)
     if (!item.children) {
       return {

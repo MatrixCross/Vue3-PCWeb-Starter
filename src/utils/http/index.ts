@@ -1,5 +1,3 @@
-import { apiBaseUrl, requestTimeout } from '@/settings/index'
-
 // axios请求库
 import Axios from 'axios'
 // import { storage } from '@/utils/storage'
@@ -8,6 +6,7 @@ import Axios from 'axios'
 import { createAlova } from 'alova'
 import GlobalFetch from 'alova/GlobalFetch'
 import VueHook from 'alova/vue'
+import { apiBaseUrl, requestTimeout } from '@/settings/index'
 
 // axios请求实例
 const axiosInstance = Axios.create({
@@ -16,7 +15,7 @@ const axiosInstance = Axios.create({
 })
 
 axiosInstance.interceptors.request.use(
-  config => {
+  (config) => {
     // 按照业务需求填写，比如：
 
     //   // 请求加上token
@@ -26,23 +25,23 @@ axiosInstance.interceptors.request.use(
     //   }
     return config
   },
-  err => {
+  (err) => {
     // 错误处理
     console.error(err)
     return Promise.reject(err)
-  }
+  },
 )
 
 axiosInstance.interceptors.response.use(
-  response => {
+  (response) => {
     // 按照业务需求填写，比如只返回响应的body，不返回status code等信息
     return response.data
   },
-  err => {
+  (err) => {
     // 错误处理
     console.error(err)
     return Promise.reject(err)
-  }
+  },
 )
 
 // alova请求实例

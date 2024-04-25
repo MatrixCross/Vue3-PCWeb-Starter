@@ -1,4 +1,4 @@
-import { encrypt, decrypt } from 'crypto-js/aes'
+import { decrypt, encrypt } from 'crypto-js/aes'
 import pkcs7 from 'crypto-js/pad-pkcs7'
 import ECB from 'crypto-js/mode-ecb'
 import md5 from 'crypto-js/md5'
@@ -24,15 +24,13 @@ export class AesECBEncryption {
   }
 
   encryptByAES(cipherText: string) {
-    if (this.key) {
+    if (this.key)
       return encrypt(cipherText, this.key, this.options).toString()
-    }
   }
 
   decryptByAES(cipherText: string) {
-    if (this.key) {
+    if (this.key)
       return decrypt(cipherText, this.key, this.options).toString(UTF8)
-    }
   }
 }
 

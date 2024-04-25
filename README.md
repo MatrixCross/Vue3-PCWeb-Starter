@@ -4,7 +4,7 @@
 [![Issues](https://img.shields.io/github/issues/Wyatex/Vue3-starter)](https://github.com/Wyatex/Vue3-starter/issues)
 [![License](https://img.shields.io/badge/License-MIT-yellowgreen)](https://github.com/Wyatex/Vue3-starter/blob/master/LICENSE)
 
-> 一套集成了 Vite 3.x + Vue 3.x + TypeScript + Vue Router + Pinia + Axios + ESlint 等套件的快速开发模板。
+> 一套集成了 Vite 5.x(Farm) + Vue 3.x + TypeScript + Vue Router + Pinia + Axios(Alova) + Eslint 等套件的快速开发模板。
 
 [在线预览](https://vue3-pc-web-starter.wyatex.online/)
 
@@ -41,7 +41,7 @@ pnpm build
 ## 技术栈
 
 - 编程语言：[Typescript](https://www.typescriptlang.org/zh/) + [Javascript](https://www.javascript.com/)
-- 构建工具：[Vite4](https://vitejs.cn/)
+- 构建工具：[Vite5](https://vitejs.cn/) / [Farm](https://www.farmfe.org/zh/)
 - 前端框架：[Vue3](https://v3.cn.vuejs.org/)
 - 路由管理：[Vue-Router4](https://next.router.vuejs.org/zh/index.html)
 - 状态管理：[pinia](https://pinia.esm.dev/)
@@ -49,8 +49,7 @@ pnpm build
 - CSS 引擎：[UnoCSS](https://github.com/unocss/unocss)
 - HTTP 工具：[Axios](https://axios-http.com/) + [Alova](https://alova.js.org/zh-CN/)
 - JSX 处理：[@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
-- 代码规范：[ESLint](https://eslint.org/)
-- 代码格式化：[Prettier](https://prettier.io/)
+- 代码规范/格式化：[ESLint](https://eslint.org/)
 - 组件库：[Naive-UI](https://www.naiveui.com/)
 - Icon 库：[@iconify/json](https://www.npmjs.com/package/@iconify/json) + [@iconify/vue](https://www.npmjs.com/package/@iconify/vue) + [unplugin-icons](https://github.com/antfu/unplugin-icons) + [unocss-icon](https://unocss.dev/presets/icons)
 

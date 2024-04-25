@@ -10,7 +10,6 @@ export function is(val: unknown, type: string) {
 /**
  * @description:  是否为函数
  */
-// eslint-disable-next-line @typescript-eslint/ban-types
 export function isFunction<T = Function>(val: unknown): val is T {
   return is(val, 'Function')
 }
@@ -18,17 +17,17 @@ export function isFunction<T = Function>(val: unknown): val is T {
 /**
  * @description: 是否已定义
  */
-export const isDef = <T = unknown>(val?: T): val is T => {
+export function isDef<T = unknown>(val?: T): val is T {
   return typeof val !== 'undefined'
 }
 
-export const isUnDef = <T = unknown>(val?: T): val is T => {
+export function isUnDef<T = unknown>(val?: T): val is T {
   return !isDef(val)
 }
 /**
  * @description: 是否为对象
  */
-export const isObject = <T = Record<string, any>>(val: unknown): val is T => {
+export function isObject<T = Record<string, any>>(val: unknown): val is T {
   return is(val, 'Object')
 }
 
@@ -50,7 +49,7 @@ export function isNumber(val: unknown): val is number {
  * @description:  是否为AsyncFunction
  */
 export function isAsyncFunction<T = unknown, U = unknown>(
-  val: unknown
+  val: unknown,
 ): val is (...args: U[]) => Promise<T> {
   return is(val, 'AsyncFunction')
 }
@@ -60,10 +59,10 @@ export function isAsyncFunction<T = unknown, U = unknown>(
  */
 export function isPromise<T = unknown>(val: unknown): val is Promise<T> {
   return (
-    is(val, 'Promise') &&
-    isObject(val) &&
-    isFunction(val.then) &&
-    isFunction(val.catch)
+    is(val, 'Promise')
+    && isObject(val)
+    && isFunction(val.then)
+    && isFunction(val.catch)
   )
 }
 
@@ -99,18 +98,18 @@ export function isNullOrUnDef(val: unknown): val is null | undefined {
 /**
  * @description: 是否客户端
  */
-export const isClient = () => {
+export function isClient() {
   return typeof window !== 'undefined'
 }
 
 /**
  * @description: 是否为浏览器
  */
-export const isWindow = (val: unknown): val is Window => {
+export function isWindow(val: unknown): val is Window {
   return typeof window !== 'undefined' && is(val, 'Window')
 }
 
-export const isElement = (val: unknown): val is Element => {
+export function isElement(val: unknown): val is Element {
   return isObject(val) && !!val.tagName
 }
 

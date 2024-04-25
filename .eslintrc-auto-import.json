@@ -297,6 +297,18 @@
     "watchThrottled": true,
     "watchTriggerable": true,
     "watchWithFilter": true,
-    "whenever": true
+    "whenever": true,
+    "ExtractDefaultPropTypes": true,
+    "ExtractPropTypes": true,
+    "ExtractPublicPropTypes": true,
+    "WritableComputedRef": true,
+    "injectLocal": true,
+    "provideLocal": true,
+    "toValue": true,
+    "useClipboardItems": true,
+    "useDialog": true,
+    "useLoadingBar": true,
+    "useMessage": true,
+    "useNotification": true
   }
 }

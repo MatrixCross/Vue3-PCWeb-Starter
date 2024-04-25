@@ -1,7 +1,7 @@
 import { nextTick } from 'vue'
 import { defineStore } from 'pinia'
+import type { RouteRecordRaw } from 'vue-router'
 import { constantRoute } from '@/router'
-import { RouteRecordRaw } from 'vue-router'
 
 export interface IRouteState {
   keepAliveComponents: string[]
@@ -32,7 +32,8 @@ export const useRouteStore = defineStore({
         setTimeout(() => {
           this.reloadFlag = true
         }, duration)
-      } else {
+      }
+      else {
         this.reloadFlag = true
       }
       setTimeout(() => {

@@ -1,15 +1,18 @@
-import { defineConfig, presetUno, presetIcons } from 'unocss'
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
 export default defineConfig({
-  exclude: ['node_modules', '.git', 'dist', 'mock', './stats.html'],
+  content: {
+    pipeline: {
+      exclude: ['node_modules', 'dist', '.git', '.husky', '.vscode', 'public', 'build', 'mock', './stats.html'],
+    },
+  },
   presets: [
     presetUno({ dark: 'class' }),
     presetIcons({
       collections: {
         custom: FileSystemIconLoader('./src/assets/svg', svg =>
-          svg.replace(/#fff/, 'currentColor')
-        ),
+          svg.replace(/#fff/, 'currentColor')),
       },
     }),
   ],
